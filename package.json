@@ -1,0 +1,14 @@
+{
+  "name": "jks-tourism-website",
+  "version": "1.0.0",
+  "private": true,
+  "description": "J K S TOURISM L.L.C. website with admin panel",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "reset-password": "node server.js --reset-password"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

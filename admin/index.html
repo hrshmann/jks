@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#0b2239">
+<title>Admin | J K S TOURISM</title>
+<link rel="icon" type="image/png" href="/assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&display=swap">
+<style>
+:root{
+  --navy:#0b2239;--navy-deep:#06162a;--navy-soft:#16324f;
+  --red:#cf3125;--red-deep:#a8261c;--red-soft:#ff7a6e;--red-tint:#fbeceb;
+  --mist:#f2f5f8;--line:#e2e8ee;--text:#14283d;--slate:#4f6070;
+  --green:#15803d;--green-tint:#e4f5ea;--amber:#8a5300;--amber-tint:#fff2dc;
+  --font:'Bricolage Grotesque',system-ui,-apple-system,'Segoe UI',sans-serif;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+body{margin:0;background:var(--mist);color:var(--text);font:400 15.5px/1.6 var(--font)}
+a{color:inherit}
+button,input,select,textarea{font:inherit;color:inherit}
+button{cursor:pointer}
+button:disabled{cursor:not-allowed;opacity:.45}
+img{display:block;max-width:100%}
+:focus-visible{outline:3px solid var(--red);outline-offset:2px;border-radius:6px}
+.sidebar :focus-visible{outline-color:#fff}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.i{width:19px;height:19px;flex:none;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:10px 18px;border:1.5px solid transparent;border-radius:10px;font-weight:600;font-size:15px;line-height:1.2;text-decoration:none;white-space:nowrap;transition:background-color .15s,border-color .15s}
+.btn-sm{min-height:38px;padding:7px 13px;font-size:14px}
+.btn-red{background:var(--red);color:#fff}
+.btn-red:hover{background:var(--red-deep)}
+.btn-line{background:#fff;border-color:#c9d3dc;color:var(--navy)}
+.btn-line:hover{border-color:var(--navy)}
+.btn-wa{background:var(--green);color:#fff}
+.btn-wa:hover{background:#116a32}
+.btn-danger{background:var(--red-deep);color:#fff}
+.btn-danger:hover{background:#87201a}
+.btn-quiet-danger{background:transparent;color:var(--red-deep)}
+.btn-quiet-danger:hover{background:var(--red-tint)}
+.icon-btn{width:38px;height:38px;display:grid;place-items:center;border:1.5px solid var(--line);border-radius:9px;background:#fff;color:var(--navy)}
+.icon-btn:hover:not(:disabled){border-color:var(--navy)}
+.icon-btn.danger{color:var(--red-deep)}
+.icon-btn.danger:hover{border-color:var(--red-deep);background:var(--red-tint)}
+
+/* Forms */
+.field{display:flex;flex-direction:column;gap:6px;min-width:0}
+.field.wide{grid-column:1/-1}
+.field label,.label{font-size:14px;font-weight:600;color:var(--navy)}
+.req{color:var(--red)}
+.field input,.field select,.field textarea{width:100%;min-height:44px;padding:10px 13px;border:1.5px solid #cfd8e0;border-radius:10px;background:#fff;font-size:15.5px}
+.field input:hover,.field select:hover,.field textarea:hover{border-color:#9fb0bf}
+.field textarea{min-height:96px;resize:vertical}
+.hint{margin:0;font-size:13.5px;color:var(--slate)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.form-error{margin:16px 0 0;padding:11px 14px;border-radius:10px;background:var(--red-tint);color:var(--red-deep);font-size:14.5px}
+.check{display:flex;align-items:center;gap:10px;font-weight:600;color:var(--navy)}
+.check input{width:20px;height:20px;accent-color:var(--red)}
+.check.wide{grid-column:1/-1}
+
+/* Login */
+.login{min-height:100vh;display:grid;place-items:center;padding:24px;background:linear-gradient(160deg,var(--navy) 0%,var(--navy-deep) 100%)}
+.login-card{width:min(400px,100%);padding:36px 32px;background:#fff;border-radius:20px;box-shadow:0 30px 70px rgba(0,0,0,.35)}
+.login-card img{width:64px;height:64px}
+.login-card h1{margin:18px 0 4px;font-size:26px;line-height:1.15;letter-spacing:-.02em;color:var(--navy)}
+.login-card>p{margin:0 0 24px;color:var(--slate)}
+.login-card .btn{width:100%;margin-top:18px}
+
+/* Layout */
+.app{display:grid;grid-template-columns:248px 1fr;min-height:100vh;background:linear-gradient(90deg,var(--navy) 248px,var(--mist) 248px)}
+.sidebar{position:sticky;top:0;height:100vh;display:flex;flex-direction:column;padding:22px 16px;background:var(--navy);color:#c9d6e2;border-top:4px solid var(--red)}
+.side-brand{display:flex;align-items:center;gap:11px;padding:4px 8px 22px;text-decoration:none;color:#fff}
+.side-brand img{width:42px;height:42px}
+.side-brand strong{display:block;font-size:16px;font-stretch:75%;letter-spacing:.08em;line-height:1.2}
+.side-brand small{display:block;font-size:13px;color:#93a5b6}
+.side-nav{display:grid;gap:4px}
+.side-nav a,.side-foot a,.side-foot button{display:flex;align-items:center;gap:12px;min-height:44px;padding:10px 12px;border:0;border-radius:10px;background:none;text-decoration:none;font-weight:500;color:inherit;text-align:left}
+.side-nav a:hover,.side-foot a:hover,.side-foot button:hover{background:var(--navy-soft);color:#fff}
+.side-nav a[aria-current="page"]{background:#fff;color:var(--navy);font-weight:600}
+.side-nav a[aria-current="page"] .i{color:var(--red)}
+.count{margin-left:auto;min-width:24px;padding:1px 8px;border-radius:999px;background:var(--red);color:#fff;font-size:12.5px;font-weight:700;text-align:center}
+.side-foot{display:grid;gap:4px;margin-top:auto;padding-top:16px;border-top:1px solid #1f3a57}
+.main{min-width:0;padding:36px 40px 64px;outline:none}
+.page-head{display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:16px;margin-bottom:26px}
+.page-head h1{margin:0;font-size:32px;line-height:1.1;letter-spacing:-.025em;color:var(--navy)}
+.page-head p{margin:6px 0 0;color:var(--slate)}
+.panel{margin-bottom:22px;padding:24px 26px;background:#fff;border:1px solid var(--line);border-radius:16px}
+.panel h2{margin:0 0 4px;font-size:19px;color:var(--navy)}
+.panel-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px}
+.panel-head a{font-weight:600;color:var(--red-deep)}
+.panel-sub{margin:0 0 18px;color:var(--slate);font-size:14.5px}
+.panel + .panel h2{margin-top:0}
+.empty{padding:44px 20px;text-align:center;color:var(--slate);background:#fff;border:1.5px dashed #cfd8e0;border-radius:16px}
+.empty strong{display:block;margin-bottom:4px;font-size:17px;color:var(--navy)}
+
+/* Dashboard */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:22px}
+.stat{display:block;padding:20px 22px;background:#fff;border:1px solid var(--line);border-radius:16px;text-decoration:none}
+a.stat:hover{border-color:var(--navy)}
+.stat strong{display:block;font-size:36px;line-height:1.1;letter-spacing:-.03em;color:var(--navy)}
+.stat span{font-size:14.5px;color:var(--slate)}
+.stat.alert strong{color:var(--red)}
+.checklist{display:grid;gap:10px;margin:14px 0 18px;padding:0;list-style:none}
+.checklist li{display:flex;align-items:flex-start;gap:12px}
+.tick{width:24px;height:24px;flex:none;display:grid;place-items:center;border:2px solid #cfd8e0;border-radius:50%}
+.done .tick{border-color:var(--green);background:var(--green);color:#fff}
+.done .tick .i{width:14px;height:14px;stroke-width:3}
+.checklist small{display:block;color:var(--slate)}
+.done span{color:var(--slate);text-decoration:line-through}
+.recent{display:grid;margin:0;padding:0;list-style:none}
+.recent li{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 0;border-top:1px solid var(--line)}
+.recent li:first-child{border-top:0}
+.recent strong{display:block;color:var(--navy)}
+.recent small{color:var(--slate)}
+
+/* Status pills */
+.pill{display:inline-flex;align-items:center;padding:3px 10px;border-radius:999px;background:var(--mist);color:var(--slate);font-size:12.5px;font-weight:600;white-space:nowrap}
+.pill-red,.st-new{background:var(--red-tint);color:var(--red-deep)}
+.st-contacted{background:var(--amber-tint);color:var(--amber)}
+.st-booked{background:var(--green-tint);color:var(--green)}
+.st-closed{background:#e9eef2;color:var(--slate)}
+
+/* Packages */
+.pkg-list{display:grid;gap:10px;margin:0;padding:0;list-style:none}
+.pkg-row{display:grid;grid-template-columns:96px minmax(0,1fr) auto auto auto;align-items:center;gap:18px;padding:12px 14px 12px 12px;background:#fff;border:1px solid var(--line);border-radius:14px}
+.pkg-row.is-hidden{background:#fafbfc}
+.pkg-row.is-hidden .pkg-thumb{opacity:.5}
+.pkg-thumb{width:96px;height:68px;border-radius:9px;object-fit:cover;background:var(--mist)}
+.pkg-info strong{display:block;font-size:16.5px;line-height:1.3;color:var(--navy)}
+.pkg-info>span{display:block;font-size:14px;color:var(--slate)}
+.pkg-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+.pkg-price{font-weight:700;color:var(--navy);white-space:nowrap}
+.vis-btn{display:inline-flex;align-items:center;gap:7px;min-height:38px;padding:6px 12px;border:1.5px solid transparent;border-radius:999px;font-size:14px;font-weight:600}
+.vis-btn.live{background:var(--green-tint);color:var(--green)}
+.vis-btn.off{background:#e9eef2;color:var(--slate)}
+.vis-btn:hover{border-color:currentColor}
+.vis-btn .i{width:17px;height:17px}
+.row-actions{display:flex;gap:6px}
+
+/* Enquiries */
+.toolbar{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;margin-bottom:18px}
+.tabs{display:flex;flex-wrap:wrap;gap:6px}
+.tab{min-height:40px;padding:7px 14px;border:1.5px solid var(--line);border-radius:999px;background:#fff;font-size:14.5px;font-weight:600;color:var(--slate)}
+.tab:hover{border-color:var(--navy);color:var(--navy)}
+.tab[aria-pressed="true"]{background:var(--navy);border-color:var(--navy);color:#fff}
+.tab span{margin-left:4px;opacity:.75;font-weight:500}
+.search{position:relative;flex:0 1 320px}
+.search .i{position:absolute;left:12px;top:50%;transform:translateY(-50%);color:var(--slate)}
+.search input{width:100%;min-height:42px;padding:9px 12px 9px 40px;border:1.5px solid #cfd8e0;border-radius:10px;background:#fff}
+.enq-list{display:grid;gap:14px}
+.enq{padding:20px 22px;background:#fff;border:1px solid var(--line);border-left:4px solid var(--line);border-radius:14px}
+.enq.enq-new{border-left-color:var(--red)}
+.enq.enq-contacted{border-left-color:#e0a23a}
+.enq.enq-booked{border-left-color:var(--green)}
+.enq-head{display:flex;align-items:flex-start;justify-content:space-between;gap:12px}
+.enq-head h3{margin:0;font-size:18px;color:var(--navy)}
+.enq-head time{font-size:13.5px;color:var(--slate)}
+.status-select select{min-height:38px;padding:6px 32px 6px 12px;border:0;border-radius:999px;font-size:14px;font-weight:600;appearance:none;background-image:linear-gradient(45deg,transparent 50%,currentColor 50%),linear-gradient(135deg,currentColor 50%,transparent 50%);background-position:calc(100% - 17px) 55%,calc(100% - 12px) 55%;background-size:5px 5px;background-repeat:no-repeat}
+.enq-facts{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:12px 20px;margin:16px 0 0}
+.enq-facts div{min-width:0}
+.enq-facts dt{font-size:12.5px;font-weight:600;color:var(--slate)}
+.enq-facts dd{margin:0;overflow-wrap:anywhere;color:var(--text)}
+.enq-facts a{color:var(--navy);font-weight:600}
+.enq-msg{margin:14px 0 0;padding:12px 14px;border-radius:10px;background:var(--mist);white-space:pre-wrap;overflow-wrap:anywhere}
+.enq-notes{margin-top:14px}
+.enq-notes textarea{min-height:60px}
+.enq-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.enq-actions .btn-quiet-danger{margin-left:auto}
+
+/* Settings */
+.settings-actions{display:flex;justify-content:flex-end;margin-top:20px}
+
+/* Dialogs */
+.modal{width:min(760px,calc(100% - 24px));max-height:calc(100dvh - 32px);padding:0;border:0;border-radius:18px;color:var(--text);box-shadow:0 30px 80px rgba(6,22,42,.45)}
+.modal::backdrop{background:rgba(6,22,42,.65)}
+.modal-sm{width:min(440px,calc(100% - 24px))}
+.modal form{display:flex;flex-direction:column;max-height:calc(100dvh - 32px)}
+.modal-head{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:20px 24px;border-bottom:1px solid var(--line)}
+.modal-head h2{margin:0;font-size:21px;color:var(--navy)}
+.modal-body{padding:22px 24px;overflow:auto}
+.modal-body h2{margin:0 0 6px;font-size:20px;color:var(--navy)}
+.modal-body p{margin:0;color:var(--slate)}
+.modal-foot{display:flex;justify-content:flex-end;gap:10px;padding:16px 24px;border-top:1px solid var(--line);background:#fafbfc}
+.img-field{display:grid;grid-template-columns:220px 1fr;gap:18px;margin-bottom:20px}
+.img-preview{position:relative;aspect-ratio:4/3;overflow:hidden;display:grid;place-items:center;border-radius:12px;background:var(--mist);border:1.5px dashed #cfd8e0;color:var(--slate);font-size:14px;text-align:center}
+.img-preview img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.img-preview .i{width:30px;height:30px;margin:0 auto 6px;display:block}
+.img-controls{display:flex;flex-direction:column;gap:10px;justify-content:center}
+.img-controls .btn{align-self:flex-start}
+
+.toast{position:fixed;left:50%;bottom:24px;z-index:100;max-width:calc(100% - 32px);padding:12px 18px;border-radius:12px;background:var(--navy);color:#fff;font-size:14.5px;box-shadow:0 14px 34px rgba(6,22,42,.35);transform:translate(-50%,20px);opacity:0;pointer-events:none;transition:opacity .2s,transform .2s}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+.toast.error{background:var(--red-deep)}
+
+@media (max-width:1100px){
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .pkg-row{grid-template-columns:80px minmax(0,1fr) auto;grid-template-areas:"img info price" "img vis actions"}
+  .pkg-thumb{grid-area:img;width:80px;height:60px}
+  .pkg-info{grid-area:info}.pkg-price{grid-area:price;text-align:right}
+  .vis-btn{grid-area:vis;justify-self:start}.row-actions{grid-area:actions;justify-content:flex-end}
+}
+@media (max-width:860px){
+  .app{grid-template-columns:1fr;background:var(--mist)}
+  .sidebar{position:sticky;z-index:10;height:auto;flex-direction:row;flex-wrap:wrap;align-items:center;gap:8px;padding:10px 14px}
+  .side-brand{padding:0;margin-right:auto}
+  .side-brand small{display:none}
+  .side-nav{order:3;width:100%;display:flex;overflow-x:auto;scrollbar-width:none}
+  .side-nav a{flex:none;min-height:40px;padding:8px 12px}
+  .side-foot{margin:0;padding:0;border:0;display:flex}
+  .side-foot a span,.side-foot button span{display:none}
+  .main{padding:24px 16px 56px}
+  .page-head h1{font-size:27px}
+  .grid2,.img-field{grid-template-columns:1fr}
+  .img-field .img-preview{max-width:320px}
+  .panel{padding:20px}
+}
+@media (max-width:520px){
+  .stats{grid-template-columns:1fr 1fr;gap:10px}
+  .stat{padding:16px}
+  .stat strong{font-size:30px}
+  .pkg-row{grid-template-columns:64px minmax(0,1fr);grid-template-areas:"img info" "price price" "vis actions";gap:10px 14px}
+  .pkg-thumb{width:64px;height:52px}
+  .pkg-price{text-align:left}
+  .enq-actions .btn{flex:1 1 auto}
+  .enq-actions .btn-quiet-danger{margin-left:0}
+  .modal-head,.modal-body,.modal-foot{padding-left:18px;padding-right:18px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></symbol>
+  <symbol id="i-inbox" viewBox="0 0 24 24"><path d="M3 13l2.5-7.5A2 2 0 0 1 7.4 4h9.2a2 2 0 0 1 1.9 1.5L21 13v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M3 13h5l1.5 3h5l1.5-3h5"/></symbol>
+  <symbol id="i-case" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 13h18"/></symbol>
+  <symbol id="i-sliders" viewBox="0 0 24 24"><path d="M4 6h10M18 6h2M4 12h4M12 12h8M4 18h12"/><circle cx="16" cy="6" r="2"/><circle cx="10" cy="12" r="2"/><circle cx="18" cy="18" r="2"/></symbol>
+  <symbol id="i-external" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></symbol>
+  <symbol id="i-logout" viewBox="0 0 24 24"><path d="M15 4h3a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-3M10 17l5-5-5-5M15 12H4"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+  <symbol id="i-edit" viewBox="0 0 24 24"><path d="M4 20h4L19 9a2.8 2.8 0 0 0-4-4L4 16z"/><path d="M13.5 6.5l4 4"/></symbol>
+  <symbol id="i-trash" viewBox="0 0 24 24"><path d="M4 7h16M9 7V4h6v3M6 7l1 13h10l1-13"/></symbol>
+  <symbol id="i-up" viewBox="0 0 24 24"><path d="M12 19V5M6 11l6-6 6 6"/></symbol>
+  <symbol id="i-down" viewBox="0 0 24 24"><path d="M12 5v14M6 13l6 6 6-6"/></symbol>
+  <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></symbol>
+  <symbol id="i-eye-off" viewBox="0 0 24 24"><path d="M3 3l18 18M10.6 5.1A10 10 0 0 1 12 5c6.5 0 10 7 10 7a17 17 0 0 1-3.2 4M6.6 6.6C3.8 8.4 2 12 2 12s3.5 7 10 7a9.6 9.6 0 0 0 5.4-1.6M9.9 9.9a3 3 0 0 0 4.2 4.2"/></symbol>
+  <symbol id="i-upload" viewBox="0 0 24 24"><path d="M12 16V4M7 9l5-5 5 5M4 16v3a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-3"/></symbol>
+  <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 4v12M7 11l5 5 5-5M4 16v3a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-3"/></symbol>
+  <symbol id="i-image" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M21 16l-5-5-9 9"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></symbol>
+  <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24"><path d="M4 20l1.3-3.9A8 8 0 1 1 8 18.8L4 20z"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></symbol>
+</svg>
+
+<div class="login" id="loginView" hidden>
+  <form class="login-card" id="loginForm" novalidate>
+    <img src="/assets/logo-mark.png" width="64" height="64" alt="">
+    <h1>J K S TOURISM admin</h1>
+    <p>Sign in to manage your packages, enquiries and contact details.</p>
+    <div class="field">
+      <label for="password">Password</label>
+      <input id="password" type="password" autocomplete="current-password" required>
+    </div>
+    <p class="form-error" id="loginError" role="alert" hidden></p>
+    <button class="btn btn-red" type="submit">Sign in</button>
+  </form>
+</div>
+
+<div class="app" id="app" hidden>
+  <aside class="sidebar">
+    <a class="side-brand" href="#dashboard"><img src="/assets/logo-mark.png" width="42" height="42" alt=""><span><strong>J K S TOURISM</strong><small>Website admin</small></span></a>
+    <nav class="side-nav" aria-label="Admin">
+      <a href="#dashboard" data-page="dashboard"><svg class="i" aria-hidden="true"><use href="#i-grid"/></svg>Dashboard</a>
+      <a href="#enquiries" data-page="enquiries"><svg class="i" aria-hidden="true"><use href="#i-inbox"/></svg>Enquiries<span class="count" id="navCount" hidden></span></a>
+      <a href="#packages" data-page="packages"><svg class="i" aria-hidden="true"><use href="#i-case"/></svg>Packages</a>
+      <a href="#settings" data-page="settings"><svg class="i" aria-hidden="true"><use href="#i-sliders"/></svg>Settings</a>
+    </nav>
+    <div class="side-foot">
+      <a href="/" target="_blank" rel="noopener" aria-label="View website (opens in a new tab)"><svg class="i" aria-hidden="true"><use href="#i-external"/></svg><span>View website</span></a>
+      <button type="button" id="logoutBtn" aria-label="Sign out"><svg class="i" aria-hidden="true"><use href="#i-logout"/></svg><span>Sign out</span></button>
+    </div>
+  </aside>
+  <main class="main" id="view" tabindex="-1"></main>
+</div>
+
+<dialog class="modal" id="pkgDialog" aria-labelledby="pkgTitle">
+  <form id="pkgForm" novalidate>
+    <header class="modal-head">
+      <h2 id="pkgTitle">Add package</h2>
+      <button type="button" class="icon-btn" data-close aria-label="Close"><svg class="i" aria-hidden="true"><use href="#i-close"/></svg></button>
+    </header>
+    <div class="modal-body">
+      <div class="img-field">
+        <div class="img-preview" id="imgPreview"><img id="imgPreviewImg" alt="" hidden><span id="imgPlaceholder"><svg class="i" aria-hidden="true"><use href="#i-image"/></svg>No photo yet</span></div>
+        <div class="img-controls">
+          <button type="button" class="btn btn-line" id="uploadBtn"><svg class="i" aria-hidden="true"><use href="#i-upload"/></svg><span>Upload photo</span></button>
+          <input type="file" id="imgFile" accept="image/jpeg,image/png,image/webp" hidden>
+          <p class="hint">JPG, PNG or WebP up to 5 MB. Wide landscape photos look best.</p>
+          <div class="field"><label for="pImage">Or paste an image link</label><input id="pImage" name="image" placeholder="https://…" inputmode="url"></div>
+        </div>
+      </div>
+      <div class="grid2">
+        <div class="field"><label for="pName">Package title <span class="req">*</span></label><input id="pName" name="name" required maxlength="90" placeholder="e.g. Discover Dubai: City Highlights"></div>
+        <div class="field"><label for="pDest">Destination <span class="req">*</span></label><input id="pDest" name="dest" required maxlength="80" placeholder="e.g. Dubai, UAE"></div>
+        <div class="field"><label for="pCategory">Category <span class="req">*</span></label><select id="pCategory" name="category" required></select></div>
+        <div class="field"><label for="pPrice">Starting price in AED <span class="req">*</span></label><input id="pPrice" name="price" type="number" min="0" step="1" required inputmode="numeric" placeholder="e.g. 799"></div>
+        <div class="field"><label for="pDuration">Duration</label><input id="pDuration" name="duration" maxlength="40" placeholder="e.g. 3 days / 2 nights"></div>
+        <div class="field"><label for="pBadge">Badge</label><input id="pBadge" name="badge" maxlength="24" placeholder="e.g. Best seller, New, Limited offer"><p class="hint">Optional. Shown in red on the photo.</p></div>
+        <div class="field wide"><label for="pDesc">Short description <span class="req">*</span></label><textarea id="pDesc" name="description" required maxlength="600" placeholder="One or two sentences about the trip."></textarea></div>
+        <div class="field wide"><label for="pHighlights">Highlights</label><textarea id="pHighlights" name="highlights" placeholder="One per line, e.g.&#10;Burj Khalifa and Downtown Dubai&#10;Evening desert safari"></textarea><p class="hint">Shown when a visitor opens the package. One per line, up to 10.</p></div>
+        <label class="check wide"><input type="checkbox" id="pPublished" name="published" checked> Show this package on the website</label>
+      </div>
+      <p class="form-error" id="pkgError" role="alert" hidden></p>
+    </div>
+    <footer class="modal-foot">
+      <button type="button" class="btn btn-line" data-close>Cancel</button>
+      <button type="submit" class="btn btn-red" id="pkgSave">Save package</button>
+    </footer>
+  </form>
+</dialog>
+
+<dialog class="modal modal-sm" id="confirmDialog" aria-labelledby="confirmTitle">
+  <form method="dialog">
+    <div class="modal-body"><h2 id="confirmTitle"></h2><p id="confirmText"></p></div>
+    <footer class="modal-foot">
+      <button class="btn btn-line" value="cancel">Cancel</button>
+      <button class="btn btn-danger" value="ok" id="confirmOk">Delete</button>
+    </footer>
+  </form>
+</dialog>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+const $ = (s, el = document) => el.querySelector(s);
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const icon = n => `<svg class="i" aria-hidden="true"><use href="#i-${n}"/></svg>`;
+const aed = n => Number(n).toLocaleString('en-AE');
+const FALLBACK_IMG = 'https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=400&q=70';
+const STATUS = {new: 'New', contacted: 'Contacted', booked: 'Booked', closed: 'Closed'};
+const PAGES = {dashboard: 'Dashboard', enquiries: 'Enquiries', packages: 'Packages', settings: 'Settings'};
+const view = $('#view');
+let site = null, enquiries = [], editingId = null;
+const ui = {filter: 'all', search: ''};
+
+// ---------- Server calls ----------
+async function api(path, {method = 'GET', body, file} = {}) {
+  const headers = {};
+  if (method !== 'GET') headers['X-JKS-Admin'] = '1';
+  if (file) headers['Content-Type'] = file.type;
+  else if (body !== undefined) headers['Content-Type'] = 'application/json';
+  let res;
+  try {
+    res = await fetch('/api/admin/' + path, {method, headers, body: file || (body === undefined ? undefined : JSON.stringify(body))});
+  } catch {
+    throw new Error('Could not reach the server. Check your connection and that the server is running.');
+  }
+  const data = await res.json().catch(() => ({}));
+  if (res.status === 401 && path !== 'login') {
+    showLogin(path === 'me' ? '' : 'Your session has ended. Sign in again.');
+    throw new Error('signed-out');
+  }
+  if (!res.ok) throw new Error(data.error || 'Something went wrong. Try again.');
+  return data;
+}
+// Runs an async action and shows any error as a toast.
+const run = fn => async (...args) => {
+  try { await fn(...args); }
+  catch (e) { if (e.message !== 'signed-out') toast(e.message, true); }
+};
+
+function toast(message, isError) {
+  const t = $('#toast');
+  t.textContent = message;
+  t.classList.toggle('error', !!isError);
+  t.classList.add('show');
+  clearTimeout(toast.timer);
+  toast.timer = setTimeout(() => t.classList.remove('show'), isError ? 6000 : 3000);
+}
+
+function confirmAction(title, text, okLabel = 'Delete') {
+  const d = $('#confirmDialog');
+  $('#confirmTitle').textContent = title;
+  $('#confirmText').textContent = text;
+  $('#confirmOk').textContent = okLabel;
+  d.returnValue = '';
+  d.showModal();
+  return new Promise(resolve => d.addEventListener('close', () => resolve(d.returnValue === 'ok'), {once: true}));
+}
+
+// ---------- Sign in ----------
+function showLogin(message) {
+  $('#app').hidden = true;
+  $('#loginView').hidden = false;
+  $('#loginError').textContent = message || '';
+  $('#loginError').hidden = !message;
+  $('#password').value = '';
+  $('#password').focus();
+}
+$('#loginForm').addEventListener('submit', async e => {
+  e.preventDefault();
+  const btn = e.target.querySelector('button');
+  btn.disabled = true;
+  try {
+    await api('login', {method: 'POST', body: {password: $('#password').value}});
+    await loadAll();
+    $('#loginView').hidden = true;
+    $('#app').hidden = false;
+    route();
+  } catch (err) {
+    $('#loginError').textContent = err.message;
+    $('#loginError').hidden = false;
+  } finally { btn.disabled = false; }
+});
+$('#logoutBtn').addEventListener('click', run(async () => {
+  await api('logout', {method: 'POST'});
+  showLogin('You have signed out.');
+}));
+
+async function loadAll() {
+  [site, enquiries] = await Promise.all([api('site'), api('enquiries')]);
+  $('#pCategory').innerHTML = site.categories.map(c => `<option>${esc(c)}</option>`).join('');
+}
+
+// ---------- Routing ----------
+function route() {
+  const page = PAGES[location.hash.slice(1)] ? location.hash.slice(1) : 'dashboard';
+  document.querySelectorAll('.side-nav a').forEach(a => {
+    if (a.dataset.page === page) a.setAttribute('aria-current', 'page');
+    else a.removeAttribute('aria-current');
+  });
+  document.title = PAGES[page] + ' | J K S TOURISM admin';
+  ({dashboard: renderDashboard, enquiries: renderEnquiries, packages: renderPackages, settings: renderSettings})[page]();
+  updateNavCount();
+}
+window.addEventListener('hashchange', () => { route(); view.focus({preventScroll: true}); window.scrollTo(0, 0); });
+
+function updateNavCount() {
+  const n = enquiries.filter(e => e.status === 'new').length;
+  $('#navCount').textContent = n;
+  $('#navCount').hidden = !n;
+}
+
+// ---------- Helpers for enquiries ----------
+const rtf = new Intl.RelativeTimeFormat('en', {numeric: 'auto'});
+function ago(iso) {
+  const s = (Date.parse(iso) - Date.now()) / 1000;
+  for (const [unit, size] of [['day', 86400], ['hour', 3600], ['minute', 60]]) {
+    if (Math.abs(s) >= size) return rtf.format(Math.round(s / size), unit);
+  }
+  return 'just now';
+}
+const fullDate = iso => new Date(iso).toLocaleString('en-AE', {dateStyle: 'medium', timeStyle: 'short'});
+
+// Turns what visitors type ("050 123 4567", "+971 50…", "00971…") into a wa.me number. Assumes UAE for local numbers.
+function waNumber(phone) {
+  const raw = String(phone).trim(), d = raw.replace(/\D/g, '');
+  if (raw.startsWith('+')) return d;
+  if (d.startsWith('00')) return d.slice(2);
+  if (d.startsWith('0') && d.length === 10) return '971' + d.slice(1);
+  if (d.startsWith('5') && d.length === 9) return '971' + d;
+  return d.length >= 10 ? d : '';
+}
+
+// ---------- Dashboard ----------
+function renderDashboard() {
+  const s = site.settings;
+  const newCount = enquiries.filter(e => e.status === 'new').length;
+  const week = enquiries.filter(e => Date.parse(e.createdAt) > Date.now() - 7 * 864e5).length;
+  const booked = enquiries.filter(e => e.status === 'booked').length;
+  const live = site.packages.filter(p => p.published).length;
+  const setup = [
+    {done: !!s.whatsapp, label: 'Add your WhatsApp number', hint: 'Turns on the WhatsApp buttons so visitors can message you in one tap.'},
+    {done: !!s.phone, label: 'Add a phone number', hint: 'Shown in the contact section and footer.'},
+    {done: !!s.licence, label: 'Add your trade licence or DET number', hint: 'Shown in the footer. Visitors look for it before booking.'}
+  ];
+  const hour = new Date().getHours();
+  view.innerHTML = `
+    <header class="page-head"><div><h1>${hour < 12 ? 'Good morning' : hour < 18 ? 'Good afternoon' : 'Good evening'}</h1><p>Here's what's happening on your website.</p></div></header>
+    <div class="stats">
+      <a class="stat${newCount ? ' alert' : ''}" href="#enquiries"><strong>${newCount}</strong><span>New enquiries to answer</span></a>
+      <div class="stat"><strong>${week}</strong><span>Enquiries in the last 7 days</span></div>
+      <div class="stat"><strong>${booked}</strong><span>Marked as booked</span></div>
+      <a class="stat" href="#packages"><strong>${live}</strong><span>Packages live on the website</span></a>
+    </div>
+    ${setup.some(x => !x.done) ? `
+    <section class="panel">
+      <h2>Finish setting up</h2>
+      <ul class="checklist">${setup.map(x => `<li class="${x.done ? 'done' : ''}"><span class="tick">${x.done ? icon('check') : ''}</span><div><span>${x.label}</span>${x.done ? '' : `<small>${x.hint}</small>`}</div></li>`).join('')}</ul>
+      <a class="btn btn-line" href="#settings">Open settings</a>
+    </section>` : ''}
+    <section class="panel">
+      <div class="panel-head"><h2>Latest enquiries</h2>${enquiries.length ? '<a href="#enquiries">View all</a>' : ''}</div>
+      ${enquiries.length ? `<ul class="recent">${enquiries.slice(0, 5).map(e => `
+        <li><div><strong>${esc(e.name)}</strong><small>${esc(e.packageName || e.destination)}, ${ago(e.createdAt)}</small></div><span class="pill st-${e.status}">${STATUS[e.status]}</span></li>`).join('')}</ul>`
+      : '<p class="panel-sub">No enquiries yet. When visitors send the form on your website, they appear here.</p>'}
+    </section>`;
+}
+
+// ---------- Enquiries ----------
+function renderEnquiries() {
+  view.innerHTML = `
+    <header class="page-head">
+      <div><h1>Enquiries</h1><p>Sent from the form on your website, newest first.</p></div>
+      ${enquiries.length ? `<a class="btn btn-line" href="/api/admin/enquiries.csv">${icon('download')}Download for Excel</a>` : ''}
+    </header>
+    <div class="toolbar">
+      <div class="tabs" id="enqTabs"></div>
+      <label class="search">${icon('search')}<span class="sr-only">Search enquiries</span><input type="search" id="enqSearch" placeholder="Search name, phone or destination" value="${esc(ui.search)}"></label>
+    </div>
+    <div class="enq-list" id="enqList"></div>`;
+  renderEnquiryTabs();
+  renderEnquiryList();
+}
+function renderEnquiryTabs() {
+  const count = s => s === 'all' ? enquiries.length : enquiries.filter(e => e.status === s).length;
+  $('#enqTabs').innerHTML = ['all', ...Object.keys(STATUS)].map(s =>
+    `<button type="button" class="tab" data-action="filter" data-filter="${s}" aria-pressed="${ui.filter === s}">${s === 'all' ? 'All' : STATUS[s]}<span>${count(s)}</span></button>`).join('');
+}
+function renderEnquiryList() {
+  const q = ui.search.toLowerCase();
+  const list = enquiries.filter(e => (ui.filter === 'all' || e.status === ui.filter) &&
+    (!q || [e.name, e.phone, e.email, e.destination, e.packageName].join(' ').toLowerCase().includes(q)));
+  $('#enqList').innerHTML = list.length ? list.map(enquiryCard).join('') : enquiries.length
+    ? '<div class="empty"><strong>No enquiries match</strong>Try another status or search.</div>'
+    : '<div class="empty"><strong>No enquiries yet</strong>When visitors send the form on your website, they appear here.</div>';
+}
+function enquiryCard(e) {
+  const wa = waNumber(e.phone);
+  const about = e.packageName || e.destination;
+  const reply = `Hello ${e.name}, thank you for your enquiry about ${about} with J K S TOURISM L.L.C. `;
+  const fact = (label, value) => value ? `<div><dt>${label}</dt><dd>${value}</dd></div>` : '';
+  return `
+  <article class="enq enq-${e.status}">
+    <header class="enq-head">
+      <div><h3>${esc(e.name)}</h3><time datetime="${esc(e.createdAt)}" title="${esc(fullDate(e.createdAt))}">${esc(ago(e.createdAt))}, ${esc(fullDate(e.createdAt))}</time></div>
+      <label class="status-select"><span class="sr-only">Status for ${esc(e.name)}</span>
+        <select class="st-${e.status}" data-action="status" data-id="${esc(e.id)}">${Object.entries(STATUS).map(([k, v]) => `<option value="${k}"${k === e.status ? ' selected' : ''}>${v}</option>`).join('')}</select>
+      </label>
+    </header>
+    <dl class="enq-facts">
+      ${fact('Phone', `<a href="tel:${esc(e.phone.replace(/[^\d+]/g, ''))}">${esc(e.phone)}</a>`)}
+      ${fact('Email', e.email && `<a href="mailto:${esc(e.email)}">${esc(e.email)}</a>`)}
+      ${fact('Destination', esc(e.destination))}
+      ${fact('Package', esc(e.packageName))}
+      ${fact('Travel dates', esc(e.dates))}
+      ${fact('Travellers', esc(e.travellers))}
+      ${fact('Budget', esc(e.budget))}
+    </dl>
+    ${e.message ? `<p class="enq-msg">${esc(e.message)}</p>` : ''}
+    <div class="enq-notes field">
+      <label for="note-${esc(e.id)}">Private notes</label>
+      <textarea id="note-${esc(e.id)}" data-action="notes" data-id="${esc(e.id)}" placeholder="Only you see these, for example: Sent quote on 21 Oct">${esc(e.notes)}</textarea>
+    </div>
+    <footer class="enq-actions">
+      ${wa ? `<a class="btn btn-wa btn-sm" href="https://wa.me/${wa}?text=${encodeURIComponent(reply)}" target="_blank" rel="noopener">${icon('chat')}Reply on WhatsApp</a>` : ''}
+      ${e.email ? `<a class="btn btn-line btn-sm" href="mailto:${esc(e.email)}?subject=${encodeURIComponent('Your enquiry: ' + about)}&body=${encodeURIComponent(reply)}">${icon('mail')}Email</a>` : ''}
+      <a class="btn btn-line btn-sm" href="tel:${esc(e.phone.replace(/[^\d+]/g, ''))}">${icon('phone')}Call</a>
+      <button type="button" class="btn btn-quiet-danger btn-sm" data-action="delete-enq" data-id="${esc(e.id)}">${icon('trash')}Delete</button>
+    </footer>
+  </article>`;
+}
+const replaceEnquiry = updated => { enquiries = enquiries.map(e => e.id === updated.id ? updated : e); };
+
+// ---------- Packages ----------
+function renderPackages() {
+  const list = site.packages;
+  const live = list.filter(p => p.published).length;
+  view.innerHTML = `
+    <header class="page-head">
+      <div><h1>Packages</h1><p>${live} live${list.length - live ? `, ${list.length - live} hidden` : ''}. They appear on your website in this order.</p></div>
+      <button type="button" class="btn btn-red" data-action="add-pkg">${icon('plus')}Add package</button>
+    </header>
+    ${list.length ? `<ul class="pkg-list">${list.map((p, i) => `
+      <li class="pkg-row${p.published ? '' : ' is-hidden'}">
+        <img class="pkg-thumb" src="${esc(p.image || FALLBACK_IMG)}" alt="" loading="lazy" onerror="this.onerror=null;this.src='${FALLBACK_IMG}'">
+        <div class="pkg-info">
+          <strong>${esc(p.name)}</strong>
+          <span>${esc(p.dest)}${p.duration ? ', ' + esc(p.duration) : ''}</span>
+          <div class="pkg-tags"><span class="pill">${esc(p.category)}</span>${p.badge ? `<span class="pill pill-red">${esc(p.badge)}</span>` : ''}</div>
+        </div>
+        <div class="pkg-price">From AED ${aed(p.price)}</div>
+        <button type="button" class="vis-btn ${p.published ? 'live' : 'off'}" data-action="toggle-pkg" data-id="${esc(p.id)}" aria-label="${p.published ? 'Live. Hide' : 'Hidden. Show'} ${esc(p.name)} ${p.published ? 'from' : 'on'} the website">${icon(p.published ? 'eye' : 'eye-off')}${p.published ? 'Live' : 'Hidden'}</button>
+        <div class="row-actions">
+          <button type="button" class="icon-btn" data-action="move" data-dir="-1" data-id="${esc(p.id)}" aria-label="Move ${esc(p.name)} up"${i === 0 ? ' disabled' : ''}>${icon('up')}</button>
+          <button type="button" class="icon-btn" data-action="move" data-dir="1" data-id="${esc(p.id)}" aria-label="Move ${esc(p.name)} down"${i === list.length - 1 ? ' disabled' : ''}>${icon('down')}</button>
+          <button type="button" class="icon-btn" data-action="edit-pkg" data-id="${esc(p.id)}" aria-label="Edit ${esc(p.name)}">${icon('edit')}</button>
+          <button type="button" class="icon-btn danger" data-action="delete-pkg" data-id="${esc(p.id)}" aria-label="Delete ${esc(p.name)}">${icon('trash')}</button>
+        </div>
+      </li>`).join('')}</ul>`
+    : `<div class="empty"><strong>No packages yet</strong>Add your first package and it appears on your website straight away.</div>`}`;
+}
+
+const pkgForm = $('#pkgForm'), pkgDialog = $('#pkgDialog');
+function setPreview(url) {
+  const img = $('#imgPreviewImg');
+  img.hidden = !url;
+  $('#imgPlaceholder').hidden = !!url;
+  if (url) img.src = url; else img.removeAttribute('src');
+}
+$('#imgPreviewImg').addEventListener('error', () => setPreview(''));
+$('#pImage').addEventListener('input', e => setPreview(e.target.value.trim()));
+
+function openPackageEditor(p) {
+  editingId = p ? p.id : null;
+  pkgForm.reset();
+  $('#pkgError').hidden = true;
+  $('#pkgTitle').textContent = p ? 'Edit package' : 'Add package';
+  if (p) {
+    for (const [field, value] of Object.entries({pName: p.name, pDest: p.dest, pCategory: p.category, pPrice: p.price, pDuration: p.duration, pBadge: p.badge, pDesc: p.description, pHighlights: (p.highlights || []).join('\n'), pImage: p.image})) {
+      $('#' + field).value = value ?? '';
+    }
+    $('#pPublished').checked = p.published;
+  }
+  setPreview(p ? p.image : '');
+  pkgDialog.showModal();
+  $('#pName').focus();
+}
+pkgDialog.addEventListener('click', e => { if (e.target === pkgDialog || e.target.closest('[data-close]')) pkgDialog.close(); });
+
+$('#uploadBtn').addEventListener('click', () => $('#imgFile').click());
+$('#imgFile').addEventListener('change', run(async e => {
+  const file = e.target.files[0];
+  e.target.value = '';
+  if (!file) return;
+  if (file.size > 5 * 1024 * 1024) throw new Error('That photo is larger than 5 MB. Choose a smaller one.');
+  const btn = $('#uploadBtn');
+  btn.disabled = true;
+  btn.querySelector('span').textContent = 'Uploading…';
+  try {
+    const {url} = await api('uploads', {method: 'POST', file});
+    $('#pImage').value = url;
+    setPreview(url);
+  } finally {
+    btn.disabled = false;
+    btn.querySelector('span').textContent = 'Upload photo';
+  }
+}));
+
+pkgForm.addEventListener('submit', async e => {
+  e.preventDefault();
+  $('#pkgError').hidden = true;
+  const invalid = [...pkgForm.querySelectorAll('[required]')].find(el => !el.value.trim());
+  if (invalid) { invalid.reportValidity(); invalid.focus(); return; }
+  const f = new FormData(pkgForm);
+  const body = Object.fromEntries(f);
+  body.published = $('#pPublished').checked;
+  const btn = $('#pkgSave');
+  btn.disabled = true;
+  try {
+    site.packages = await api(editingId ? 'packages/' + encodeURIComponent(editingId) : 'packages', {method: editingId ? 'PUT' : 'POST', body});
+    pkgDialog.close();
+    renderPackages();
+    toast(editingId ? 'Package updated' : 'Package added to your website');
+  } catch (err) {
+    if (err.message === 'signed-out') return pkgDialog.close();
+    $('#pkgError').textContent = err.message;
+    $('#pkgError').hidden = false;
+  } finally { btn.disabled = false; }
+});
+
+// ---------- Settings ----------
+function renderSettings() {
+  const s = site.settings;
+  view.innerHTML = `
+    <header class="page-head"><div><h1>Settings</h1><p>Changes appear on your website as soon as you save.</p></div></header>
+    <form class="panel" id="settingsForm" novalidate>
+      <h2>Contact details</h2>
+      <p class="panel-sub">Empty fields are hidden on the website.</p>
+      <div class="grid2">
+        <div class="field"><label for="sWhatsapp">WhatsApp number</label><input id="sWhatsapp" name="whatsapp" inputmode="numeric" placeholder="971501234567" value="${esc(s.whatsapp)}"><p class="hint">Country code and number, digits only. Turns on every WhatsApp button.</p></div>
+        <div class="field"><label for="sEmail">Email <span class="req">*</span></label><input id="sEmail" name="email" type="email" required value="${esc(s.email)}"><p class="hint">Visitors see this, and enquiries fall back to it.</p></div>
+        <div class="field"><label for="sPhone">Phone number</label><input id="sPhone" name="phone" type="tel" placeholder="+971 4 123 4567" value="${esc(s.phone)}"><p class="hint">Shown exactly as you type it.</p></div>
+        <div class="field"><label for="sLocation">Location</label><input id="sLocation" name="location" placeholder="e.g. Office 12, Al Nahda, Dubai" value="${esc(s.location)}"></div>
+        <div class="field wide"><label for="sLicence">Trade licence or DET number</label><input id="sLicence" name="licence" placeholder="e.g. Trade licence no. 123456" value="${esc(s.licence)}"><p class="hint">Shown in the website footer.</p></div>
+      </div>
+      <h2 style="margin-top:26px">Website text</h2>
+      <div class="field" style="margin-top:12px"><label for="sPriceNote">Price note</label><textarea id="sPriceNote" name="priceNote" maxlength="300">${esc(s.priceNote)}</textarea><p class="hint">Shown under the packages and in each package's details.</p></div>
+      <div class="settings-actions"><button type="submit" class="btn btn-red">Save changes</button></div>
+    </form>
+    <form class="panel" id="passwordForm" novalidate>
+      <h2>Admin password</h2>
+      <p class="panel-sub">Changing it signs out every other device.</p>
+      <div class="grid2">
+        <div class="field wide"><label for="pwCurrent">Current password</label><input id="pwCurrent" type="password" autocomplete="current-password" required></div>
+        <div class="field"><label for="pwNext">New password</label><input id="pwNext" type="password" autocomplete="new-password" minlength="8" required><p class="hint">At least 8 characters.</p></div>
+        <div class="field"><label for="pwConfirm">Repeat new password</label><input id="pwConfirm" type="password" autocomplete="new-password" required></div>
+      </div>
+      <div class="settings-actions"><button type="submit" class="btn btn-line">Change password</button></div>
+    </form>`;
+}
+
+// ---------- Page actions ----------
+view.addEventListener('click', run(async e => {
+  const el = e.target.closest('[data-action]');
+  if (!el) return;
+  const id = el.dataset.id;
+  const pkg = site.packages.find(p => p.id === id);
+
+  switch (el.dataset.action) {
+    case 'filter':
+      ui.filter = el.dataset.filter;
+      renderEnquiryTabs();
+      renderEnquiryList();
+      break;
+    case 'add-pkg':
+      openPackageEditor(null);
+      break;
+    case 'edit-pkg':
+      openPackageEditor(pkg);
+      break;
+    case 'toggle-pkg':
+      site.packages = await api('packages/' + encodeURIComponent(id), {method: 'PUT', body: {...pkg, published: !pkg.published}});
+      renderPackages();
+      toast(pkg.published ? `${pkg.name} is now hidden from your website` : `${pkg.name} is now live on your website`);
+      break;
+    case 'move': {
+      const ids = site.packages.map(p => p.id);
+      const from = ids.indexOf(id), to = from + Number(el.dataset.dir);
+      [ids[from], ids[to]] = [ids[to], ids[from]];
+      site.packages = await api('packages-order', {method: 'PUT', body: {ids}});
+      renderPackages();
+      view.querySelector(`[data-action="move"][data-id="${CSS.escape(id)}"][data-dir="${el.dataset.dir}"]:not(:disabled)`)?.focus();
+      break;
+    }
+    case 'delete-pkg':
+      if (!await confirmAction('Delete this package?', `${pkg.name} will be removed from your website. This can't be undone.`)) return;
+      site.packages = await api('packages/' + encodeURIComponent(id), {method: 'DELETE'});
+      renderPackages();
+      toast('Package deleted');
+      break;
+    case 'delete-enq': {
+      const enq = enquiries.find(x => x.id === id);
+      if (!await confirmAction('Delete this enquiry?', `The enquiry from ${enq.name} will be deleted. This can't be undone.`)) return;
+      await api('enquiries/' + encodeURIComponent(id), {method: 'DELETE'});
+      enquiries = enquiries.filter(x => x.id !== id);
+      renderEnquiryTabs();
+      renderEnquiryList();
+      updateNavCount();
+      toast('Enquiry deleted');
+      break;
+    }
+  }
+}));
+
+view.addEventListener('change', run(async e => {
+  const el = e.target;
+  if (el.dataset.action === 'status') {
+    replaceEnquiry(await api('enquiries/' + encodeURIComponent(el.dataset.id), {method: 'PATCH', body: {status: el.value}}));
+    el.className = 'st-' + el.value;
+    el.closest('.enq').className = 'enq enq-' + el.value;
+    renderEnquiryTabs();
+    updateNavCount();
+    toast('Marked as ' + STATUS[el.value].toLowerCase());
+  }
+  if (el.dataset.action === 'notes') {
+    replaceEnquiry(await api('enquiries/' + encodeURIComponent(el.dataset.id), {method: 'PATCH', body: {notes: el.value}}));
+    toast('Note saved');
+  }
+}));
+
+view.addEventListener('input', e => {
+  if (e.target.id === 'enqSearch') { ui.search = e.target.value.trim(); renderEnquiryList(); }
+});
+
+view.addEventListener('submit', run(async e => {
+  e.preventDefault();
+  const form = e.target;
+  const invalid = [...form.elements].find(el => el.willValidate && !el.checkValidity());
+  if (invalid) { invalid.reportValidity(); invalid.focus(); return; }
+  if (form.id === 'settingsForm') {
+    site.settings = await api('settings', {method: 'PUT', body: Object.fromEntries(new FormData(form))});
+    renderSettings();
+    toast('Settings saved. Your website is updated.');
+  }
+  if (form.id === 'passwordForm') {
+    if ($('#pwNext').value !== $('#pwConfirm').value) {
+      $('#pwConfirm').setCustomValidity('The two new passwords do not match.');
+      $('#pwConfirm').reportValidity();
+      $('#pwConfirm').addEventListener('input', () => $('#pwConfirm').setCustomValidity(''), {once: true});
+      return;
+    }
+    await api('password', {method: 'POST', body: {current: $('#pwCurrent').value, next: $('#pwNext').value}});
+    form.reset();
+    toast('Password changed');
+  }
+}));
+
+// Check for new enquiries every minute.
+setInterval(run(async () => {
+  if ($('#app').hidden || document.hidden) return;
+  const latest = await api('enquiries');
+  const fresh = latest.filter(e => !enquiries.some(x => x.id === e.id)).length;
+  enquiries = latest;
+  updateNavCount();
+  if (!fresh) return;
+  toast(fresh === 1 ? 'New enquiry received' : fresh + ' new enquiries received');
+  const page = location.hash.slice(1) || 'dashboard';
+  if (page === 'dashboard') renderDashboard();
+  if (page === 'enquiries' && !view.contains(document.activeElement)) {
+    renderEnquiryTabs();
+    renderEnquiryList();
+  }
+}), 60000);
+
+// ---------- Start ----------
+(async () => {
+  try {
+    await api('me');
+    await loadAll();
+  } catch (e) {
+    if (e.message !== 'signed-out') showLogin(e.message);
+    return;
+  }
+  $('#app').hidden = false;
+  route();
+})();
+</script>
+</body>
+</html>

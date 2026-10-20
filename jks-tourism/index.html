@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0b2239">
+<title>J K S TOURISM LLC | Discover Beyond Borders</title>
+<meta name="description" content="Tailor-made holidays, UAE experiences and worldwide travel packages, planned personally by J K S TOURISM LLC in the United Arab Emirates.">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="J K S TOURISM LLC | Discover Beyond Borders">
+<meta property="og:description" content="Tailor-made holidays, UAE experiences and worldwide travel packages, planned personally by our UAE-based team.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=1200&h=630&fit=crop&q=80">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://images.unsplash.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&display=swap">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"TravelAgency","name":"J K S TOURISM LLC","email":"info@jkstourism.com","address":{"@type":"PostalAddress","addressCountry":"AE"},"areaServed":"Worldwide"}
+</script>
+
+<style>
+:root{
+  --navy:#0b2239;--navy-deep:#06162a;
+  --red:#cf3125;--red-deep:#a8261c;--red-soft:#ff7a6e;--red-tint:#fbeceb;--cream:#fbf7ec;
+  --mist:#f2f5f8;--line:#e2e8ee;--text:#14283d;--slate:#4f6070;--green:#1fa855;
+  --font:'Bricolage Grotesque',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --stub:150px;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:#fff;color:var(--text);font:400 16px/1.65 var(--font)}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button,input,select,textarea{font:inherit;color:inherit}
+button{cursor:pointer}
+:focus-visible{outline:3px solid var(--red);outline-offset:3px;border-radius:4px}
+.hero :focus-visible,.contact :focus-visible,.footer :focus-visible{outline-color:#fff}
+.form-card :focus-visible,.pass :focus-visible{outline-color:var(--red)}
+[id]{scroll-margin-top:88px}
+.skip{position:absolute;left:16px;top:-60px;z-index:100;background:var(--navy);color:#fff;padding:10px 16px;border-radius:8px}
+.skip:focus{top:12px}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+.i{width:20px;height:20px;flex:none;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:12px 22px;border-radius:10px;border:1.5px solid transparent;font-weight:600;font-size:15px;line-height:1.2;transition:background-color .15s,border-color .15s,color .15s}
+.btn-red{background:var(--red);color:#fff}
+.btn-red:hover{background:var(--red-deep)}
+.btn-navy{background:var(--navy);color:#fff}
+.btn-navy:hover{background:var(--navy-deep)}
+.btn-line{background:#fff;border-color:#c9d3dc;color:var(--navy)}
+.btn-line:hover{border-color:var(--navy)}
+.btn-ghost{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.55);color:#fff}
+.btn-ghost:hover{background:rgba(255,255,255,.14);border-color:#fff}
+
+/* Navigation */
+.site-nav{position:sticky;top:0;z-index:20;background:#fff;border-top:4px solid var(--red);box-shadow:0 1px 0 var(--line)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;gap:24px;height:76px}
+.brand{display:flex;align-items:center;gap:10px}
+.brand-mark{width:52px;height:52px;flex:none}
+/* Echoes the outlined pill wordmark in the logo */
+.brand-name{display:inline-block;padding:3px 13px 4px;border:2px solid var(--red);border-radius:999px;color:var(--red);font-weight:800;font-size:17px;font-stretch:75%;letter-spacing:.08em;line-height:1.2;white-space:nowrap}
+.menu{display:flex;align-items:center;gap:28px;font-size:15px;font-weight:500}
+.menu a:not(.btn){padding:6px 0;border-bottom:2px solid transparent}
+.menu a:not(.btn):hover{border-bottom-color:var(--red)}
+.menu-btn{display:none;width:44px;height:44px;place-items:center;background:none;border:0;border-radius:8px;color:var(--navy)}
+.menu-btn .i{width:26px;height:26px}
+.mobile-menu{display:none}
+
+/* Hero */
+.hero{position:relative;isolation:isolate;overflow:hidden;background:var(--navy-deep);color:#fff}
+.hero-bg{position:absolute;inset:0;z-index:-2;width:100%;height:100%;object-fit:cover;object-position:center 45%}
+.hero::before{content:'';position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(6,22,42,.94) 0%,rgba(6,22,42,.78) 42%,rgba(6,22,42,.2) 100%)}
+.hero-content{padding-top:112px;padding-bottom:172px}
+.hero h1{margin:0;font-size:clamp(44px,6.4vw,88px);line-height:1.02;font-weight:700;letter-spacing:-.035em;font-variation-settings:'opsz' 96}
+.hero p{max-width:34em;margin:26px 0 34px;font-size:18px;line-height:1.7;color:#d5dfe8}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px}
+.hero-content>*{animation:rise .7s cubic-bezier(.2,.7,.2,1) both}
+.hero-content>:nth-child(2){animation-delay:.08s}
+.hero-content>:nth-child(3){animation-delay:.16s}
+@keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+
+/* Boarding pass search */
+.pass-wrap{position:relative;z-index:2;margin-top:-92px;filter:drop-shadow(0 22px 40px rgba(6,22,42,.22))}
+.pass{display:grid;grid-template-columns:1fr var(--stub);background:#fff;border-radius:18px;
+  -webkit-mask:radial-gradient(circle 12px at calc(100% - var(--stub)) 0,#0000 97%,#000) top/100% 51% no-repeat,radial-gradient(circle 12px at calc(100% - var(--stub)) 100%,#0000 97%,#000) bottom/100% 51% no-repeat;
+  mask:radial-gradient(circle 12px at calc(100% - var(--stub)) 0,#0000 97%,#000) top/100% 51% no-repeat,radial-gradient(circle 12px at calc(100% - var(--stub)) 100%,#0000 97%,#000) bottom/100% 51% no-repeat}
+.pass-main{display:grid;grid-template-columns:auto 1.4fr 1fr 1fr auto;align-items:center;padding:20px 22px}
+.pass-field{display:flex;flex-direction:column;gap:4px;min-width:0;padding:6px 20px;border-left:1px solid var(--line)}
+.pass-field:first-child{border-left:0;padding-left:6px}
+.pass-field label,.pass-label{font-size:13px;font-weight:600;color:var(--slate)}
+.pass-field input,.pass-field select{width:100%;min-width:0;padding:4px 0;border:0;background:transparent;font-size:17px;font-weight:600;color:var(--navy)}
+.pass-field input::placeholder{color:#7d8b98;font-weight:500}
+.pass-from strong{font-size:26px;font-weight:800;letter-spacing:.04em;line-height:1.15;color:var(--navy)}
+.pass-main .btn{margin-left:14px}
+.pass-stub{display:flex;flex-direction:column;justify-content:center;gap:2px;padding:18px 20px;border-left:2px dashed rgba(255,255,255,.7);border-radius:0 18px 18px 0;background:var(--red);color:#fff}
+.pass-stub small{font-size:12.5px;opacity:.92}
+.pass-stub strong{font-size:30px;font-weight:800;letter-spacing:.06em;line-height:1.1}
+
+/* Sections */
+.section{padding:104px 0}
+.section-mist{background:var(--mist)}
+.section-head{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;margin-bottom:32px}
+.section-head .btn{flex:none}
+h2{margin:0;font-size:clamp(32px,3.8vw,48px);line-height:1.08;font-weight:700;letter-spacing:-.03em;color:var(--navy);font-variation-settings:'opsz' 72}
+.lede{max-width:36em;margin:14px 0 0;font-size:17px;color:var(--slate)}
+#packages{padding-top:88px}
+
+/* Filters and package cards */
+.filters{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;margin-bottom:24px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{min-height:42px;padding:9px 18px;border:1.5px solid var(--line);border-radius:999px;background:#fff;font-size:14.5px;font-weight:600;color:var(--slate)}
+.chip:hover{border-color:var(--navy);color:var(--navy)}
+.chip[aria-pressed="true"]{background:var(--navy);border-color:var(--navy);color:#fff}
+.result-count{margin:0;font-size:14.5px;color:var(--slate)}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.card{display:flex;flex-direction:column;overflow:hidden;background:#fff;border:1px solid var(--line);border-radius:16px;transition:box-shadow .2s}
+.card:hover{box-shadow:0 18px 40px rgba(11,34,57,.1)}
+.card-img{position:relative;aspect-ratio:4/3;background:var(--mist)}
+.card-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.tag{position:absolute;left:14px;top:14px;padding:6px 12px;border-radius:999px;background:rgba(6,22,42,.82);color:#fff;font-size:13px;font-weight:600}
+.card-body{display:flex;flex-direction:column;flex:1;padding:22px 22px 20px}
+.meta{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:14px;color:var(--slate)}
+.meta span{display:inline-flex;align-items:center;gap:6px}
+.meta .i{width:16px;height:16px;color:var(--red)}
+.card h3{margin:12px 0 8px;font-size:21px;line-height:1.25;font-weight:700;letter-spacing:-.015em;color:var(--navy)}
+.card p{display:-webkit-box;-webkit-line-clamp:3;line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;margin:0 0 20px;font-size:15px;line-height:1.6;color:var(--slate)}
+.card-foot{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;margin-top:auto;padding-top:16px;border-top:1px solid var(--line)}
+.price small{display:block;font-size:13px;color:var(--slate)}
+.price strong{font-size:24px;font-weight:700;letter-spacing:-.02em;color:var(--navy)}
+.btn-enquire{min-height:44px;padding:10px 16px;background:var(--red-tint);color:var(--red-deep);font-size:14.5px}
+.btn-enquire:hover{background:var(--red);color:#fff}
+.price-note{margin:22px 0 0;font-size:14px;color:var(--slate)}
+.card{position:relative}
+.card-link{all:unset;cursor:pointer}
+.card-link::after{content:'';position:absolute;inset:0;z-index:1;border-radius:16px}
+.card:has(.card-link:focus-visible){outline:3px solid var(--red);outline-offset:3px}
+.card .btn-enquire{position:relative;z-index:2}
+.card-more{margin:-8px 0 18px;font-size:14px;font-weight:600;color:var(--red);text-decoration:underline;text-underline-offset:3px}
+.badge{position:absolute;right:14px;top:14px;padding:6px 12px;border-radius:999px;background:var(--red);color:#fff;font-size:13px;font-weight:700}
+
+/* Package details dialog */
+.details{width:min(720px,calc(100% - 24px));max-height:calc(100dvh - 32px);padding:0;border:0;border-radius:20px;overflow:auto;color:var(--text);box-shadow:0 30px 80px rgba(6,22,42,.4)}
+.details::backdrop{background:rgba(6,22,42,.72)}
+.details[open]{animation:pop .22s ease-out}
+@keyframes pop{from{opacity:0;transform:translateY(12px) scale(.98)}to{opacity:1;transform:none}}
+body:has(.details[open]){overflow:hidden}
+.details-img{position:relative;aspect-ratio:16/9;background:var(--mist)}
+.details-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.details .badge{right:auto;left:14px}
+.details-close{position:absolute;right:14px;top:14px;width:42px;height:42px;display:grid;place-items:center;border:0;border-radius:50%;background:rgba(255,255,255,.94);color:var(--navy)}
+.details-body{padding:26px 30px 28px}
+.details h3{margin:10px 0;font-size:clamp(24px,3vw,30px);line-height:1.15;letter-spacing:-.02em;color:var(--navy)}
+.details-desc{margin:0;font-size:16.5px;color:var(--slate)}
+.details h4{margin:24px 0 10px;font-size:16px;color:var(--navy)}
+.highlights{display:grid;gap:8px;margin:0;padding:0;list-style:none}
+.highlights li{display:flex;align-items:flex-start;gap:10px}
+.highlights .i{width:18px;height:18px;margin-top:3px;color:var(--red)}
+.details-foot{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:16px;margin-top:26px;padding-top:20px;border-top:1px solid var(--line)}
+.details-actions{display:flex;flex-wrap:wrap;gap:10px}
+.details-note{margin:16px 0 0;font-size:13.5px;color:var(--slate)}
+.empty{grid-column:1/-1;padding:56px 20px;text-align:center;border:1.5px dashed #cfd8e0;border-radius:16px}
+.empty p{margin:0 0 18px;color:var(--slate)}
+.empty-actions{display:flex;flex-wrap:wrap;justify-content:center;gap:10px}
+
+/* How it works */
+.steps{position:relative;display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin:44px 0 0;padding:0;list-style:none}
+.steps::before{content:'';position:absolute;top:22px;left:22px;right:calc((100% - 64px)/3 - 22px);border-top:2px dashed rgba(207,49,37,.45)}
+.step{position:relative}
+.step-num{position:relative;width:44px;height:44px;border-radius:50%;display:grid;place-items:center;background:var(--red);color:#fff;font-weight:700;font-size:18px;box-shadow:0 0 0 6px var(--mist)}
+.step h3{margin:20px 0 8px;font-size:21px;letter-spacing:-.015em;color:var(--navy)}
+.step p{max-width:32ch;margin:0;color:var(--slate)}
+
+/* Why choose us */
+.why-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:72px;align-items:center}
+.why-img{position:relative}
+.why-img img{width:100%;height:520px;object-fit:cover;border-radius:18px}
+.why-card{position:absolute;right:-24px;bottom:28px;max-width:240px;padding:20px 22px;background:#fff;border-left:4px solid var(--red);border-radius:14px;box-shadow:0 18px 40px rgba(6,22,42,.18)}
+.why-card strong{display:block;font-size:22px;line-height:1.2;letter-spacing:-.02em;color:var(--navy)}
+.why-card span{font-size:14.5px;color:var(--slate)}
+.benefits{display:grid;gap:22px;margin:28px 0 32px;padding:0;list-style:none}
+.benefit{display:grid;grid-template-columns:48px 1fr;gap:16px}
+.benefit-icon{width:48px;height:48px;border-radius:12px;display:grid;place-items:center;background:var(--red-tint);color:var(--red)}
+.benefit-icon .i{width:22px;height:22px}
+.benefit strong{display:block;margin-bottom:2px;font-size:17.5px;color:var(--navy)}
+.benefit span{font-size:15.5px;color:var(--slate)}
+
+/* Experiences */
+.tiles{display:grid;grid-template-columns:1.3fr 1fr 1fr;grid-template-rows:240px 240px;gap:16px;margin-top:36px}
+.tile{position:relative;isolation:isolate;overflow:hidden;display:flex;align-items:flex-end;border-radius:16px;background:var(--navy);color:#fff}
+.tile:first-child{grid-row:span 2}
+.tile:last-child{grid-column:span 2}
+.tile img{position:absolute;inset:0;z-index:-2;width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.tile::after{content:'';position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,transparent 35%,rgba(6,22,42,.88))}
+.tile:hover img{transform:scale(1.04)}
+.tile-text{padding:22px 24px}
+.tile-text strong{display:block;font-size:24px;line-height:1.15;letter-spacing:-.02em}
+.tile-text span{font-size:14.5px;color:#dbe4ec}
+
+/* Contact */
+.contact{background:var(--navy);color:#fff}
+.contact h2{color:#fff}
+.contact .lede{color:#c6d3de}
+.contact-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:64px;align-items:start}
+.contact-list{display:grid;gap:14px;margin:36px 0 0;padding:0;list-style:none}
+.contact-item{display:flex;align-items:center;gap:14px;font-size:16.5px}
+a.contact-item:hover .contact-value{color:var(--red-soft)}
+.contact-icon{width:44px;height:44px;flex:none;border-radius:12px;display:grid;place-items:center;background:rgba(255,255,255,.08);color:var(--red-soft)}
+.contact-item small{display:block;font-size:13px;color:#9fb1c1}
+.form-card{padding:32px;background:#fff;color:var(--text);border-radius:18px;box-shadow:0 24px 50px rgba(0,0,0,.25)}
+.form-card h3{margin:0;font-size:22px;color:var(--navy)}
+.form-intro{margin:4px 0 0;font-size:15px;color:var(--slate)}
+.form-intro .req{color:var(--red)}
+.pkg-chip{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:18px;padding:8px 8px 8px 14px;border-radius:10px;background:var(--red-tint);color:var(--red-deep);font-size:14.5px}
+.pkg-chip button{width:34px;height:34px;flex:none;display:grid;place-items:center;border:0;border-radius:8px;background:transparent;color:var(--red-deep)}
+.pkg-chip button:hover{background:rgba(207,49,37,.12)}
+.hp{position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden}
+.form-error{margin:18px 0 0;padding:12px 14px;border-radius:10px;background:var(--red-tint);color:var(--red-deep);font-size:14.5px}
+.form-success{outline:none}
+.success-icon{width:52px;height:52px;border-radius:50%;display:grid;place-items:center;background:#e4f5ea;color:#15803d}
+.success-icon .i{width:26px;height:26px;stroke-width:2.4}
+.form-success h3{margin:18px 0 6px}
+.form-success p{margin:0;color:var(--slate)}
+.success-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.btn-wa{background:#15803d;color:#fff}
+.btn-wa:hover{background:#116a32}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:22px}
+.field{display:flex;flex-direction:column;gap:6px}
+.field.wide{grid-column:1/-1}
+.field label{font-size:14px;font-weight:600;color:var(--navy)}
+.field label .req{color:var(--red)}
+.field input,.field select,.field textarea{width:100%;min-height:48px;padding:11px 14px;border:1.5px solid #cfd8e0;border-radius:10px;background:#fff;font-size:16px}
+.field input:hover,.field select:hover,.field textarea:hover{border-color:#9fb0bf}
+.field textarea{min-height:110px;resize:vertical}
+.form-foot{display:flex;flex-wrap:wrap;align-items:center;gap:16px;margin-top:22px}
+.form-note{margin:0;font-size:14px;color:var(--slate)}
+
+/* Footer */
+.footer{padding:72px 0 28px;background:var(--navy-deep);color:#b4c2cf;font-size:15px}
+.footer-grid{display:grid;grid-template-columns:1.6fr 1fr 1.2fr;gap:56px}
+.footer .brand-name{color:var(--cream)}
+.footer p{max-width:34ch;margin:18px 0 0;line-height:1.7}
+.footer h4{margin:4px 0 16px;font-size:16px;font-weight:600;color:#fff}
+.footer ul{display:grid;gap:10px;margin:0;padding:0;list-style:none}
+.footer a:hover{color:#fff;text-decoration:underline;text-decoration-color:var(--red-soft);text-underline-offset:4px}
+.footer-bottom{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;margin-top:56px;padding-top:22px;border-top:1px solid #1f3448;font-size:14px;color:#93a5b6}
+
+.wa-float{position:fixed;right:20px;bottom:20px;z-index:30;width:58px;height:58px;border-radius:50%;display:grid;place-items:center;background:var(--green);color:#fff;box-shadow:0 10px 26px rgba(6,22,42,.35)}
+.wa-float .i{width:28px;height:28px}
+
+@media (max-width:1020px){
+  .pass-main{grid-template-columns:1fr 1fr;gap:4px 0}
+  .pass-field,.pass-field:first-child{padding:10px 14px;border-left:0}
+  .pass-main .btn{grid-column:1/-1;margin:10px 0 0}
+  .grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .why-grid,.contact-grid{gap:44px}
+  .footer-grid{gap:32px}
+}
+@media (max-width:820px){
+  .menu{display:none}
+  .menu-btn{display:grid}
+  .mobile-menu:not([hidden]){display:flex;flex-direction:column;padding:4px 24px 20px;border-top:1px solid var(--line)}
+  .mobile-menu a:not(.btn){padding:13px 0;border-bottom:1px solid var(--line);font-size:17px;font-weight:600}
+  .mobile-menu .btn{margin-top:16px}
+  .why-grid,.contact-grid{grid-template-columns:1fr}
+  .why-img img{height:380px}
+  .why-card{right:16px}
+  .steps{grid-template-columns:1fr;gap:28px}
+  .steps::before{display:none}
+  .step:not(:last-child)::after{content:'';position:absolute;left:21px;top:44px;bottom:-28px;border-left:2px dashed rgba(207,49,37,.45)}
+  .step{display:grid;grid-template-columns:44px 1fr;gap:0 18px}
+  .step h3{margin:8px 0 6px}
+  .footer-grid{grid-template-columns:1fr 1fr}
+  .footer-grid>:first-child{grid-column:1/-1}
+}
+@media (max-width:720px){
+  .container{padding:0 18px}
+  .nav-inner{height:68px}
+  .brand-mark{width:44px;height:44px}
+  .brand-name{padding:2px 10px 3px;font-size:14.5px}
+  .mobile-menu:not([hidden]){padding:4px 18px 20px}
+  .hero::before{background:linear-gradient(180deg,rgba(6,22,42,.7),rgba(6,22,42,.9))}
+  .hero-content{padding-top:72px;padding-bottom:124px}
+  .hero p{font-size:16.5px}
+  .pass-wrap{margin-top:-72px}
+  .pass{grid-template-columns:1fr;-webkit-mask:none;mask:none}
+  .pass-main{padding:12px 14px 16px}
+  .pass-from{display:none!important}
+  .pass-to{grid-column:1/-1}
+  .pass-stub{flex-direction:row;align-items:baseline;justify-content:space-between;padding:14px 20px;border-left:0;border-top:2px dashed rgba(255,255,255,.7);border-radius:0 0 18px 18px}
+  .pass-stub strong{font-size:22px}
+  .section{padding:72px 0}
+  #packages{padding-top:64px}
+  .section-head{flex-direction:column;align-items:flex-start}
+  .chips{flex-wrap:nowrap;overflow-x:auto;margin:0 -18px;padding:0 18px 4px;scrollbar-width:none}
+  .chip{flex:none}
+  .grid{grid-template-columns:1fr}
+  .tiles{grid-template-columns:1fr 1fr;grid-template-rows:none;grid-auto-rows:170px;gap:12px}
+  .tile:first-child{grid-row:auto;grid-column:1/-1}
+  .tile-text{padding:16px 18px}
+  .tile-text strong{font-size:19px}
+  .form-card{padding:22px}
+  .details-body{padding:20px}
+  .details-actions,.details-actions .btn{flex:1 1 auto}
+  .form-grid{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24"><path d="M4 20l1.3-3.9A8 8 0 1 1 8 18.8L4 20z"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></symbol>
+  <symbol id="i-send" viewBox="0 0 24 24"><path d="M22 2L11 13"/><path d="M22 2l-7 20-4-9-9-4z"/></symbol>
+  <symbol id="i-route" viewBox="0 0 24 24"><circle cx="6" cy="19" r="2"/><circle cx="18" cy="5" r="2"/><path d="M8 19h7.5a3.5 3.5 0 0 0 0-7h-7a3.5 3.5 0 0 1 0-7H16"/></symbol>
+  <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+  <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></symbol>
+</svg>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-nav">
+  <div class="container nav-inner">
+    <a href="#home" class="brand" aria-label="J K S TOURISM L.L.C., home">
+      <img class="brand-mark" src="assets/logo-mark.png" width="52" height="52" alt="">
+      <span class="brand-name" aria-hidden="true">J K S TOURISM L.L.C.</span>
+    </a>
+    <nav class="menu" aria-label="Main">
+      <a href="#packages">Packages</a>
+      <a href="#how">How it works</a>
+      <a href="#why">Why us</a>
+      <a href="#experiences">Experiences</a>
+      <a class="btn btn-red" href="#contact">Plan my trip</a>
+    </nav>
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu"><svg class="i" aria-hidden="true"><use href="#i-menu"/></svg></button>
+  </div>
+  <nav class="mobile-menu" id="mobileMenu" aria-label="Mobile" hidden>
+    <a href="#home">Home</a>
+    <a href="#packages">Packages</a>
+    <a href="#how">How it works</a>
+    <a href="#why">Why us</a>
+    <a href="#experiences">Experiences</a>
+    <a class="btn btn-red" href="#contact">Plan my trip</a>
+  </nav>
+</header>
+
+<main id="main">
+  <section class="hero" id="home">
+    <img class="hero-bg" alt="" fetchpriority="high"
+      src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=1400&q=80"
+      srcset="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=800&q=80 800w, https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=1400&q=80 1400w, https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=2000&q=80 2000w"
+      sizes="100vw">
+    <div class="container hero-content">
+      <h1>Discover the world.<br>Travel exceptionally.</h1>
+      <p>From unforgettable UAE adventures to extraordinary international escapes, we plan seamless, personal trips around the way you like to travel.</p>
+      <div class="hero-actions">
+        <a class="btn btn-red" href="#packages">Explore packages</a>
+        <a class="btn btn-ghost" href="#contact">Get a free quote</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="container pass-wrap">
+    <form class="pass" role="search" aria-label="Find a package" id="searchForm">
+      <div class="pass-main">
+        <div class="pass-field pass-from"><span class="pass-label">From</span><strong>UAE</strong></div>
+        <div class="pass-field pass-to"><label for="destInput">To</label><input id="destInput" type="search" placeholder="Where to next?" autocomplete="off"></div>
+        <div class="pass-field"><label for="typeInput">Travel type</label><select id="typeInput"><option value="">All types</option></select></div>
+        <div class="pass-field"><label for="budgetInput">Budget</label>
+          <select id="budgetInput">
+            <option value="">Any budget</option>
+            <option value="1000">Up to AED 1,000</option>
+            <option value="3000">Up to AED 3,000</option>
+            <option value="6000">Up to AED 6,000</option>
+          </select>
+        </div>
+        <button class="btn btn-navy" type="submit">Find packages</button>
+      </div>
+      <div class="pass-stub" aria-hidden="true"><small>Boarding pass</small><strong>JKS</strong><small>Seat: your choice</small></div>
+    </form>
+  </div>
+
+  <section class="section" id="packages">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <h2>Handpicked travel packages</h2>
+          <p class="lede">Starting points for your next trip. Every package can be adjusted to your dates, hotels and pace.</p>
+        </div>
+        <a class="btn btn-line" href="#contact">Request a custom package</a>
+      </div>
+      <div class="filters">
+        <div class="chips" id="chips" role="group" aria-label="Filter by travel type"></div>
+        <p class="result-count" id="resultCount" aria-live="polite"></p>
+      </div>
+      <div class="grid" id="packageGrid">
+        <noscript><p class="empty">Turn on JavaScript to browse packages, or email us at <a href="mailto:info@jkstourism.com">info@jkstourism.com</a>.</p></noscript>
+      </div>
+      <p class="price-note" id="priceNote">Prices are indicative starting rates in AED and depend on travel dates, availability and season. We confirm your final price in a written quote before you book.</p>
+    </div>
+  </section>
+
+  <section class="section section-mist" id="how">
+    <div class="container">
+      <h2>Planning with us is simple</h2>
+      <p class="lede">You tell us what you have in mind. We do the research, the comparing and the booking.</p>
+      <ol class="steps">
+        <li class="step"><span class="step-num" aria-hidden="true">1</span><div><h3>Tell us your plans</h3><p>Where you'd like to go, when, who's travelling and roughly what you'd like to spend.</p></div></li>
+        <li class="step"><span class="step-num" aria-hidden="true">2</span><div><h3>Get your itinerary</h3><p>We send you options for flights, stays and experiences, and adjust them until they fit.</p></div></li>
+        <li class="step"><span class="step-num" aria-hidden="true">3</span><div><h3>Confirm and travel</h3><p>Once you're happy, we confirm the bookings and send everything you need before you go.</p></div></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section" id="why">
+    <div class="container why-grid">
+      <div class="why-img">
+        <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1000&q=80" alt="Aircraft wing above the clouds at sunset" loading="lazy">
+        <div class="why-card"><strong>Travel better.</strong><span>Every detail, thoughtfully handled.</span></div>
+      </div>
+      <div>
+        <h2>More than a trip. An experience to remember.</h2>
+        <p class="lede">At J K S TOURISM LLC, we believe travel should feel inspiring from the first conversation to the final destination.</p>
+        <ul class="benefits">
+          <li class="benefit"><span class="benefit-icon"><svg class="i" aria-hidden="true"><use href="#i-route"/></svg></span><div><strong>Tailor-made itineraries</strong><span>Choose the places, pace and travel style that suit you best.</span></div></li>
+          <li class="benefit"><span class="benefit-icon"><svg class="i" aria-hidden="true"><use href="#i-chat"/></svg></span><div><strong>Personal travel assistance</strong><span>Talk directly with our team about every important detail.</span></div></li>
+          <li class="benefit"><span class="benefit-icon"><svg class="i" aria-hidden="true"><use href="#i-globe"/></svg></span><div><strong>UAE and worldwide</strong><span>City escapes, family breaks, romantic stays and adventures.</span></div></li>
+        </ul>
+        <a class="btn btn-navy" href="#contact">Talk to our travel team</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-mist" id="experiences">
+    <div class="container">
+      <h2>Find your kind of escape</h2>
+      <div class="tiles">
+        <a class="tile" href="#packages" data-category="UAE Experiences"><img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=800&q=80" alt="" loading="lazy"><span class="tile-text"><strong>UAE adventures</strong><span data-count="UAE Experiences"></span></span></a>
+        <a class="tile" href="#packages" data-category="International"><img src="https://images.unsplash.com/photo-1533105079780-92b9be482077?w=800&q=80" alt="" loading="lazy"><span class="tile-text"><strong>Worldwide holidays</strong><span data-count="International"></span></span></a>
+        <a class="tile" href="#packages" data-category="Honeymoon"><img src="https://images.unsplash.com/photo-1514282401047-d79a71a590e8?w=800&q=80" alt="" loading="lazy"><span class="tile-text"><strong>Romantic getaways</strong><span data-count="Honeymoon"></span></span></a>
+        <a class="tile" href="#packages" data-category="Family Holidays"><img src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=1000&q=80" alt="" loading="lazy"><span class="tile-text"><strong>Family escapes</strong><span data-count="Family Holidays"></span></span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section contact" id="contact">
+    <div class="container contact-grid">
+      <div>
+        <h2>Have a destination in mind?</h2>
+        <p class="lede">Tell us where you'd like to go and our team will shape an itinerary around you.</p>
+        <ul class="contact-list" id="contactList"></ul>
+      </div>
+      <div class="form-card">
+      <form id="enquiryForm" novalidate>
+        <h3>Send us your trip idea</h3>
+        <p class="form-intro">We reply with options and a quote. Fields marked <span class="req">*</span> are required.</p>
+        <div class="pkg-chip" id="pkgChip" hidden>
+          <span>Enquiring about <strong id="pkgChipName"></strong></span>
+          <button type="button" id="pkgChipClear" aria-label="Remove this package from the enquiry"><svg class="i" aria-hidden="true"><use href="#i-close"/></svg></button>
+        </div>
+        <input type="hidden" name="packageId" id="fPackage">
+        <div class="hp" aria-hidden="true"><label for="fWebsite">Leave this empty</label><input id="fWebsite" name="website" tabindex="-1" autocomplete="off"></div>
+        <div class="form-grid">
+          <div class="field"><label for="fName">Your name <span class="req">*</span></label><input id="fName" name="name" required autocomplete="name"></div>
+          <div class="field"><label for="fPhone">Phone or WhatsApp <span class="req">*</span></label><input id="fPhone" name="phone" type="tel" required autocomplete="tel" placeholder="e.g. 050 123 4567" pattern="[\d \+\(\)\-]{7,}" title="At least 7 digits, for example 050 123 4567"></div>
+          <div class="field"><label for="fEmail">Email</label><input id="fEmail" name="email" type="email" autocomplete="email"></div>
+          <div class="field"><label for="fDest">Destination <span class="req">*</span></label><input id="fDest" name="destination" required placeholder="e.g. Georgia, Maldives"></div>
+          <div class="field"><label for="fDates">Travel dates</label><input id="fDates" name="dates" placeholder="e.g. 12–18 December"></div>
+          <div class="field"><label for="fPeople">Travellers</label><input id="fPeople" name="travellers" type="number" min="1" max="50" inputmode="numeric" placeholder="e.g. 2"></div>
+          <div class="field wide"><label for="fBudget">Budget</label>
+            <select id="fBudget" name="budget">
+              <option value="">Not sure yet</option>
+              <option>Up to AED 1,000</option>
+              <option>AED 1,000 – 3,000</option>
+              <option>AED 3,000 – 6,000</option>
+              <option>Above AED 6,000</option>
+            </select>
+          </div>
+          <div class="field wide"><label for="fMsg">Anything else?</label><textarea id="fMsg" name="message" placeholder="Hotel style, activities, special occasions…"></textarea></div>
+        </div>
+        <p class="form-error" id="formError" role="alert" hidden></p>
+        <div class="form-foot">
+          <button class="btn btn-red" type="submit" id="sendBtn"><svg class="i" aria-hidden="true"><use href="#i-send"/></svg><span>Send enquiry</span></button>
+          <p class="form-note">Your details go straight to our travel team.</p>
+        </div>
+      </form>
+      <div class="form-success" id="formSuccess" tabindex="-1" hidden>
+        <span class="success-icon"><svg class="i" aria-hidden="true"><use href="#i-check"/></svg></span>
+        <h3>Enquiry sent</h3>
+        <p id="successText"></p>
+        <div class="success-actions">
+          <a class="btn btn-wa" id="successWa" target="_blank" rel="noopener" hidden><svg class="i" aria-hidden="true"><use href="#i-chat"/></svg>Continue on WhatsApp</a>
+          <button type="button" class="btn btn-line" id="sendAnother">Send another enquiry</button>
+        </div>
+      </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<dialog class="details" id="detailsDialog" aria-labelledby="detailsTitle"></dialog>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="brand"><img class="brand-mark" src="assets/logo-mark.png" width="52" height="52" alt="" loading="lazy"><span class="brand-name">J K S TOURISM L.L.C.</span></div>
+        <p>Explore remarkable places, create meaningful memories and travel with confidence through thoughtfully arranged experiences.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="#packages">Tour packages</a></li>
+          <li><a href="#how">How it works</a></li>
+          <li><a href="#why">Why us</a></li>
+          <li><a href="#experiences">Experiences</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Get in touch</h4>
+        <ul id="footerContact"></ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> J K S TOURISM L.L.C. All rights reserved.</span>
+      <span id="licence" hidden></span>
+    </div>
+  </div>
+</footer>
+
+<a class="wa-float" id="waFloat" target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp" hidden><svg class="i" aria-hidden="true"><use href="#i-chat"/></svg></a>
+
+<!--
+  Site content. When the site runs through server.js, this block is replaced with the
+  live packages and settings from the admin panel (/admin). The values below are the
+  starting data, and are what the page shows if it is opened without the server.
+-->
+<script id="site-data" type="application/json">
+{
+  "settings": {
+    "whatsapp": "",
+    "email": "info@jkstourism.com",
+    "phone": "",
+    "location": "United Arab Emirates",
+    "licence": "",
+    "priceNote": "Prices are indicative starting rates in AED and depend on travel dates, availability and season. We confirm your final price and inclusions in a written quote before you book."
+  },
+  "packages": [
+    {"id":"dubai","name":"Discover Dubai: City Highlights","dest":"Dubai, UAE","category":"UAE Experiences","price":799,"duration":"3 days / 2 nights","badge":"Best seller","description":"A curated introduction to Dubai’s iconic city sights and unforgettable experiences.","highlights":["Burj Khalifa and Downtown Dubai","Dubai Marina and JBR waterfront","Old Dubai souks and an abra ride across the Creek","Evening desert safari"],"image":"https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=800&q=80"},
+    {"id":"maldives","name":"Maldives Island Escape","dest":"Maldives","category":"Honeymoon","price":4899,"duration":"5 days / 4 nights","badge":"","description":"Turquoise water, pristine beaches and a beautifully relaxed island retreat.","highlights":["Overwater or beach villa stays","Snorkelling over coral reefs","Sunset cruise","Speedboat or seaplane transfers"],"image":"https://images.unsplash.com/photo-1514282401047-d79a71a590e8?w=800&q=80"},
+    {"id":"georgia","name":"Georgia: Mountains and City","dest":"Tbilisi, Georgia","category":"International","price":1999,"duration":"4 days / 3 nights","badge":"","description":"Explore charming streets, mountain landscapes and the spirit of Georgia.","highlights":["Tbilisi Old Town and Narikala Fortress","Day trip to Kazbegi and Gergeti Trinity Church","Ananuri Fortress on the Georgian Military Road"],"image":"https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&q=80"},
+    {"id":"istanbul","name":"Istanbul Discovery","dest":"Istanbul, Turkey","category":"International","price":2599,"duration":"5 days / 4 nights","badge":"","description":"A cultural getaway through Istanbul’s heritage, architecture and famous bazaars.","highlights":["Hagia Sophia and the Blue Mosque","Topkapi Palace","Grand Bazaar and Spice Bazaar","Bosphorus cruise"],"image":"https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?w=800&q=80"},
+    {"id":"abudhabi","name":"Abu Dhabi City Break","dest":"Abu Dhabi, UAE","category":"UAE Experiences","price":999,"duration":"3 days / 2 nights","badge":"","description":"Discover the capital’s remarkable architecture, waterfront and cultural highlights.","highlights":["Sheikh Zayed Grand Mosque","Louvre Abu Dhabi","Corniche waterfront","Yas Island"],"image":"https://images.unsplash.com/photo-1512632578888-169bbbc64f33?w=800&q=80"},
+    {"id":"swiss","name":"Swiss Alps Family Escape","dest":"Switzerland","category":"Family Holidays","price":5999,"duration":"6 days / 5 nights","badge":"","description":"Breathtaking Alpine scenery and memorable family-friendly adventures.","highlights":["Lauterbrunnen valley and its waterfalls","Mountain railway journeys","Interlaken lakes","Family-friendly alpine activities"],"image":"https://images.unsplash.com/photo-1530122037265-a5f1f91d3b99?w=800&q=80"}
+  ]
+}
+</script>
+<script>
+// Must match CATEGORIES in server.js (sets the order of the filter buttons).
+const CATEGORIES = ['UAE Experiences', 'International', 'Honeymoon', 'Family Holidays', 'Cruises'];
+const SITE = JSON.parse(document.getElementById('site-data').textContent);
+const CONFIG = SITE.settings;
+const PACKAGES = SITE.packages;
+
+const FALLBACK_IMG = 'https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=800&q=80';
+const $ = s => document.querySelector(s);
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const icon = name => `<svg class="i" aria-hidden="true"><use href="#i-${name}"/></svg>`;
+const aed = n => Number(n).toLocaleString('en-AE');
+const hasWhatsApp = /^[1-9]\d{7,14}$/.test(CONFIG.whatsapp);
+const waLink = text => 'https://wa.me/' + CONFIG.whatsapp + (text ? '?text=' + encodeURIComponent(text) : '');
+
+// Opens WhatsApp when a number is configured, otherwise the visitor's email app.
+function contact(message, subject) {
+  if (hasWhatsApp) window.open(waLink(message), '_blank', 'noopener');
+  else location.href = 'mailto:' + CONFIG.email + '?subject=' + encodeURIComponent(subject || 'Travel enquiry') + '&body=' + encodeURIComponent(message);
+}
+
+// ---- Package filtering ----
+const state = {category: '', dest: '', budget: Infinity};
+const usedCategories = CATEGORIES.filter(c => PACKAGES.some(p => p.category === c));
+const countLabel = n => n + (n === 1 ? ' package' : ' packages');
+
+$('#typeInput').insertAdjacentHTML('beforeend', usedCategories.map(c => `<option>${esc(c)}</option>`).join(''));
+document.querySelectorAll('[data-count]').forEach(el => {
+  const n = PACKAGES.filter(p => p.category === el.dataset.count).length;
+  el.textContent = n ? countLabel(n) : 'Ask us for options';
+});
+if (CONFIG.priceNote) $('#priceNote').textContent = CONFIG.priceNote;
+else $('#priceNote').hidden = true;
+
+function setCategory(c) {
+  state.category = c;
+  $('#typeInput').value = c;
+  render();
+}
+
+function render() {
+  $('#chips').innerHTML = ['', ...usedCategories].map(c =>
+    `<button type="button" class="chip" data-category="${esc(c)}" aria-pressed="${state.category === c}">${esc(c || 'All packages')}</button>`).join('');
+
+  const q = state.dest.toLowerCase();
+  const found = PACKAGES.filter(p =>
+    (!state.category || p.category === state.category) &&
+    (!q || (p.name + ' ' + p.dest + ' ' + p.description).toLowerCase().includes(q)) &&
+    p.price <= state.budget);
+
+  $('#resultCount').textContent = 'Showing ' + countLabel(found.length);
+  $('#packageGrid').innerHTML = found.length ? found.map(p => `
+    <article class="card">
+      <div class="card-img">
+        <img loading="lazy" src="${esc(p.image || FALLBACK_IMG)}" alt="${esc(p.dest)}" onerror="this.onerror=null;this.src='${FALLBACK_IMG}'">
+        <span class="tag">${esc(p.category)}</span>
+        ${p.badge ? `<span class="badge">${esc(p.badge)}</span>` : ''}
+      </div>
+      <div class="card-body">
+        <div class="meta"><span>${icon('pin')}${esc(p.dest)}</span>${p.duration ? `<span>${icon('clock')}${esc(p.duration)}</span>` : ''}</div>
+        <h3><button type="button" class="card-link" data-details="${esc(p.id)}">${esc(p.name)}</button></h3>
+        <p>${esc(p.description)}</p>
+        ${p.highlights && p.highlights.length ? '<span class="card-more" aria-hidden="true">See highlights</span>' : ''}
+        <div class="card-foot">
+          <div class="price"><small>From AED</small><strong>${aed(p.price)}</strong></div>
+          <button type="button" class="btn btn-enquire" data-enquire="${esc(p.id)}">Enquire</button>
+        </div>
+      </div>
+    </article>`).join('') : `
+    <div class="empty">
+      <p>No packages match these filters.</p>
+      <div class="empty-actions">
+        <button type="button" class="btn btn-line" data-action="clear">Clear filters</button>
+        <a class="btn btn-red" href="#contact">Ask for a custom trip</a>
+      </div>
+    </div>`;
+}
+
+$('#destInput').addEventListener('input', e => { state.dest = e.target.value.trim(); render(); });
+$('#typeInput').addEventListener('change', e => setCategory(e.target.value));
+$('#budgetInput').addEventListener('change', e => { state.budget = Number(e.target.value) || Infinity; render(); });
+$('#searchForm').addEventListener('submit', e => { e.preventDefault(); $('#packages').scrollIntoView(); });
+
+const findPackage = id => PACKAGES.find(p => p.id === id);
+const packageMessage = p => `Hello J K S TOURISM LLC, I'm interested in the ${p.name} package (${p.dest}${p.duration ? ', ' + p.duration : ''}, from AED ${aed(p.price)}). Please share availability, inclusions and a quotation.`;
+
+// ---- Package details dialog ----
+const detailsDialog = $('#detailsDialog');
+function openDetails(p) {
+  detailsDialog.innerHTML = `
+    <div class="details-img">
+      <img src="${esc(p.image || FALLBACK_IMG)}" alt="${esc(p.dest)}" onerror="this.onerror=null;this.src='${FALLBACK_IMG}'">
+      ${p.badge ? `<span class="badge">${esc(p.badge)}</span>` : ''}
+      <button type="button" class="details-close" data-close aria-label="Close">${icon('close')}</button>
+    </div>
+    <div class="details-body">
+      <div class="meta"><span>${icon('pin')}${esc(p.dest)}</span>${p.duration ? `<span>${icon('clock')}${esc(p.duration)}</span>` : ''}<span>${esc(p.category)}</span></div>
+      <h3 id="detailsTitle">${esc(p.name)}</h3>
+      <p class="details-desc">${esc(p.description)}</p>
+      ${p.highlights && p.highlights.length ? `<h4>Highlights</h4><ul class="highlights">${p.highlights.map(h => `<li>${icon('check')}<span>${esc(h)}</span></li>`).join('')}</ul>` : ''}
+      <div class="details-foot">
+        <div class="price"><small>From AED</small><strong>${aed(p.price)}</strong></div>
+        <div class="details-actions">
+          ${hasWhatsApp ? `<button type="button" class="btn btn-line" data-wa="${esc(p.id)}">${icon('chat')}Ask on WhatsApp</button>` : ''}
+          <button type="button" class="btn btn-red" data-enquire="${esc(p.id)}">Enquire about this trip</button>
+        </div>
+      </div>
+      ${CONFIG.priceNote ? `<p class="details-note">${esc(CONFIG.priceNote)}</p>` : ''}
+    </div>`;
+  detailsDialog.showModal();
+}
+detailsDialog.addEventListener('click', e => {
+  if (e.target === detailsDialog || e.target.closest('[data-close]')) detailsDialog.close();
+});
+
+document.addEventListener('click', e => {
+  const cat = e.target.closest('[data-category]');
+  if (cat) setCategory(cat.dataset.category);
+
+  const det = e.target.closest('[data-details]');
+  if (det && findPackage(det.dataset.details)) openDetails(findPackage(det.dataset.details));
+
+  const enq = e.target.closest('[data-enquire]');
+  if (enq && findPackage(enq.dataset.enquire)) {
+    if (detailsDialog.open) detailsDialog.close();
+    enquireAbout(findPackage(enq.dataset.enquire));
+  }
+
+  const wa = e.target.closest('[data-wa]');
+  if (wa && findPackage(wa.dataset.wa)) contact(packageMessage(findPackage(wa.dataset.wa)));
+
+  if (e.target.closest('[data-action="clear"]')) {
+    state.dest = ''; state.budget = Infinity;
+    $('#destInput').value = ''; $('#budgetInput').value = '';
+    setCategory('');
+  }
+});
+
+// ---- Contact details ----
+const contactItems = [
+  {icon: 'mail', label: 'Email', value: CONFIG.email, href: 'mailto:' + CONFIG.email},
+  hasWhatsApp && {icon: 'chat', label: 'WhatsApp', value: 'Chat with our team', href: waLink(), external: true},
+  CONFIG.phone && {icon: 'phone', label: 'Phone', value: CONFIG.phone, href: 'tel:' + CONFIG.phone.replace(/[^\d+]/g, '')},
+  CONFIG.location && {icon: 'pin', label: 'Based in', value: CONFIG.location}
+].filter(Boolean);
+
+$('#contactList').innerHTML = contactItems.map(c => {
+  const inner = `<span class="contact-icon">${icon(c.icon)}</span><span><small>${esc(c.label)}</small><span class="contact-value">${esc(c.value)}</span></span>`;
+  const attrs = c.external ? ' target="_blank" rel="noopener"' : '';
+  return `<li>${c.href ? `<a class="contact-item" href="${esc(c.href)}"${attrs}>${inner}</a>` : `<div class="contact-item">${inner}</div>`}</li>`;
+}).join('');
+
+$('#footerContact').innerHTML = contactItems.map(c => {
+  const attrs = c.external ? ' target="_blank" rel="noopener"' : '';
+  return `<li>${c.href ? `<a href="${esc(c.href)}"${attrs}>${esc(c.label === 'WhatsApp' ? 'WhatsApp enquiries' : c.value)}</a>` : esc(c.value)}</li>`;
+}).join('');
+
+if (hasWhatsApp) {
+  $('#waFloat').href = waLink('Hello J K S TOURISM LLC, I would like to enquire about your travel packages.');
+  $('#waFloat').hidden = false;
+}
+if (CONFIG.licence) {
+  $('#licence').textContent = CONFIG.licence;
+  $('#licence').hidden = false;
+}
+// ---- Enquiry form ----
+const form = $('#enquiryForm'), success = $('#formSuccess'), sendBtn = $('#sendBtn');
+
+function enquireAbout(p) {
+  $('#fPackage').value = p.id;
+  $('#pkgChipName').textContent = p.name;
+  $('#pkgChip').hidden = false;
+  $('#fDest').value = p.dest;
+  form.hidden = false;
+  success.hidden = true;
+  $('#contact').scrollIntoView();
+  $('#fName').focus({preventScroll: true});
+}
+function clearPackage() {
+  $('#fPackage').value = '';
+  $('#pkgChip').hidden = true;
+}
+$('#pkgChipClear').addEventListener('click', clearPackage);
+
+function enquiryText(f, pkg) {
+  return [
+    'Hello J K S TOURISM LLC, I would like to plan a trip.',
+    '',
+    'Name: ' + f.name.trim(),
+    'Phone: ' + f.phone.trim(),
+    f.email.trim() ? 'Email: ' + f.email.trim() : null,
+    pkg ? 'Package: ' + pkg.name : null,
+    'Destination: ' + f.destination.trim(),
+    f.dates.trim() ? 'Travel dates: ' + f.dates.trim() : null,
+    f.travellers ? 'Travellers: ' + f.travellers : null,
+    f.budget ? 'Budget: ' + f.budget : null,
+    f.message.trim() ? '\n' + f.message.trim() : null
+  ].filter(l => l !== null).join('\n');
+}
+
+function showFormError(message) {
+  $('#formError').textContent = message;
+  $('#formError').hidden = false;
+}
+
+form.addEventListener('submit', async e => {
+  e.preventDefault();
+  $('#formError').hidden = true;
+  const invalid = [...form.querySelectorAll('[required]')].find(el => !el.value.trim()) ||
+    [...form.elements].find(el => el.willValidate && !el.checkValidity());
+  if (invalid) { invalid.reportValidity(); invalid.focus(); return; }
+
+  const f = Object.fromEntries(new FormData(form));
+  const pkg = findPackage(f.packageId);
+  sendBtn.disabled = true;
+  sendBtn.querySelector('span').textContent = 'Sending…';
+  let res;
+  try {
+    res = await fetch('/api/enquiries', {method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify(f)});
+  } catch { res = null; }
+  sendBtn.disabled = false;
+  sendBtn.querySelector('span').textContent = 'Send enquiry';
+
+  // No server behind the page (opened as a file or on static hosting): hand the enquiry to WhatsApp or email.
+  if (!res || [404, 405, 501].includes(res.status)) return contact(enquiryText(f, pkg), 'Trip enquiry: ' + f.destination.trim());
+
+  if (!res.ok) {
+    const data = await res.json().catch(() => ({}));
+    return showFormError(data.error || `Your enquiry could not be sent. Try again, or email us at ${CONFIG.email}.`);
+  }
+  $('#successText').textContent = `Thanks, ${f.name.trim()}. Our travel team has your enquiry ${pkg ? 'about ' + pkg.name : 'for ' + f.destination.trim()} and will contact you on ${f.phone.trim()}.`;
+  if (hasWhatsApp) {
+    $('#successWa').href = waLink(enquiryText(f, pkg));
+    $('#successWa').hidden = false;
+  }
+  form.hidden = true;
+  success.hidden = false;
+  success.focus();
+});
+
+$('#sendAnother').addEventListener('click', () => {
+  form.reset();
+  clearPackage();
+  success.hidden = true;
+  form.hidden = false;
+  $('#fName').focus();
+});
+
+// ---- Mobile menu ----
+const menuBtn = $('#menuBtn'), mobileMenu = $('#mobileMenu');
+function setMenu(open) {
+  mobileMenu.hidden = !open;
+  menuBtn.setAttribute('aria-expanded', open);
+  menuBtn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+  menuBtn.innerHTML = icon(open ? 'close' : 'menu');
+}
+menuBtn.addEventListener('click', () => setMenu(mobileMenu.hidden));
+mobileMenu.addEventListener('click', e => { if (e.target.closest('a')) setMenu(false); });
+document.addEventListener('keydown', e => { if (e.key === 'Escape' && !mobileMenu.hidden) { setMenu(false); menuBtn.focus(); } });
+matchMedia('(min-width: 821px)').addEventListener('change', e => { if (e.matches) setMenu(false); });
+
+$('#year').textContent = new Date().getFullYear();
+render();
+</script>
+</body>
+</html>

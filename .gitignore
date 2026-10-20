@@ -1,0 +1,5 @@
+# Live content, customer enquiries and the admin password hash. Back this folder up; never publish it.
+data/
+node_modules/
+# Copy of the original single-file site from before the redesign
+backup/
